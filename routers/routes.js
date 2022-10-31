@@ -18,4 +18,5 @@ router.get('/admin', UserController.getAdmin)
 router.get('/service', UserController.getService)
 
 
+
 module.exports = router;

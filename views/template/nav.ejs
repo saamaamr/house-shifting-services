@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-warning fw-bold">
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary fw-bold">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Home</a>
+    <div class="logo">
+      <a href="/home" class="btn"><h4 style="color: rgb(7, 241, 249);">House<span style="color: rgb(255, 255, 255);">Shifting</span>Service</h4></a>
+  </div>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,12 +17,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/add-doctor"
-            >Add Doctor</a
+          <a class="nav-link active" aria-current="page" href="/home" style="color: rgb(211, 231, 151);">Home</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="patient-list"> Patient List</a>
+          <a class="nav-link active" href="/" style="color: rgb(151, 231, 163);">Login</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -29,10 +30,10 @@
           type="search"
           oninput="getSearch(event)"
           name="name"
-          placeholder="Search"
+          placeholder="Search....."
           aria-label="Search"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-light" type="submit">Search</button>
       </form>
     </div>
   </div>

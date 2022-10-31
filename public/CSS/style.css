@@ -30,7 +30,6 @@ body {
     display: flex;
     align-items: center;
     width: 300px;
-    padding-left: 40px;
 }
 
 .logo span {
