@@ -462,9 +462,9 @@ a {
 }
 
 
-/* recent--patients */
+/* recent--worker */
 
-.recent--patients {
+.recent--worker {
     margin-bottom: 20px;
 }
 
@@ -597,3 +597,10 @@ th {
         padding: 10px;
     }
 }
+
+#more {
+    display: none;
+  }
+  #more2 {
+    display: none;
+  }

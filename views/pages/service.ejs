@@ -1,112 +1,230 @@
 <%- include ('../template/header') %>
 
-<section class="header">
-    <div class="logo">
-        <i class="ri-menu-line icon icon-0 menu"></i>
-        <h2>House<span>Shifting</span></h2>
-    </div>
-    <div class="search--notification--profile">
-        <div class="search">
-            <input type="text" placeholder="Search Scdule..">
-            <button><i class="ri-search-2-line"></i></button>
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line icon icon-0 menu"></i>
+            <h2>House<span>Shifting</span></h2>
         </div>
-        <div class="notification--profile">
-            <div class="picon lock">
-                <i class="ri-lock-line"></i>
+        <div class="search--notification--profile">
+            <div class="search">
+                <input type="text" placeholder="Search Service..">
+                <button><i class="ri-search-2-line"></i></button>
             </div>
-            <div class="picon bell">
-                <i class="ri-notification-2-line"></i>
-            </div>
-            <div class="picon chat">
-                <i class="ri-wechat-2-line"></i>
-            </div>
-            <div class="picon profile">
-                <img src="/images/profile.png" alt="">
-            </div>
-        </div>
-    </div>
-</section>
-<section class="main">
-    <div class="sidebar">
-        <ul class="sidebar--items">
-            <li>
-                <a href="#" id="active--link">
-                    <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
-                    <span class="sidebar--item">Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-2"><i class="ri-git-repository-line"></i></span>
-                    <span class="sidebar--item">Service</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-2"><i class="ri-calendar-2-line"></i></span>
-                    <span class="sidebar--item">Booking Schedule</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
-                    <span class="sidebar--item" style="white-space: nowrap;">Worker</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-4"><i class="ri-user-line"></i></span>
-                    <span class="sidebar--item">User</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-5"><i class="ri-line-chart-line"></i></span>
-                    <span class="sidebar--item">Booking</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-6"><i class="ri-customer-service-line"></i></span>
-                    <span class="sidebar--item">Support</span>
-                </a>
-            </li>
-        </ul>
-        <ul class="sidebar--bottom-items">
-            <li>
-                <a href="#">
-                    <span class="icon icon-7"><i class="ri-settings-3-line"></i></span>
-                    <span class="sidebar--item">Settings</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
-                    <span class="sidebar--item">Logout</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="main--content">
-        <div class="overview">
-            <div class="title">
-                <h2 class="section--title">Overview</h2>
-                <select name="date" id="date" class="dropdown">
-                    <option value="today">Today</option>
-                    <option value="lastweek">Last Week</option>
-                    <option value="lastmonth">Last Month</option>
-                    <option value="last  yearss">Last   yearss</option>
-                    <option value="alltime">All Time</option>
-                </select>
-            </div>
-            <div class="cards">
-                <form action="" method="post">
-                    <input type="text">
-                </form>
+            <div class="notification--profile">
+                <div class="picon lock">
+                    <i class="ri-lock-line"></i>
+                </div>
+                <div class="picon bell">
+                    <i class="ri-notification-2-line"></i>
+                </div>
+                <div class="picon chat">
+                    <i class="ri-wechat-2-line"></i>
+                </div>
+                <div class="picon profile">
+                    <img src="/images/profile.png" alt="">
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<script src="assets/JS/admin.js"></script>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="/admin">
+                        <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
+                        <span class="sidebar--item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/service" id="active--link">
+                        <span class="icon icon-2"><i class="ri-git-repository-line"></i></span>
+                        <span class="sidebar--item">Service</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-2"><i class="ri-calendar-2-line"></i></span>
+                        <span class="sidebar--item">Booking Schedule</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Worker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-4"><i class="ri-user-line"></i></span>
+                        <span class="sidebar--item">User</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-5"><i class="ri-line-chart-line"></i></span>
+                        <span class="sidebar--item">Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-6"><i class="ri-customer-service-line"></i></span>
+                        <span class="sidebar--item">Support</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li>
+                    <a href="#">
+                        <span class="icon icon-7"><i class="ri-settings-3-line"></i></span>
+                        <span class="sidebar--item">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
+                        <span class="sidebar--item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="service">
+                <div class="title">
+                    <h2 class="section--title">Add Service</h2>
+                </div>
+                <div class="container">
+                    <form action="/add-service" method="post">
+                        <div class="mb-3 col-12">
+                            <label for="exampleFormControlInput1" class="form-label">Service Title</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Enter Service Title">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="exampleFormControlTextarea1" class="form-label">Service Details</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Details..."></textarea>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="exampleFormControlInput1" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="$100.00">
+                        </div>
 
-<%- include ('../template/footer') %>
+                        <!-- button -->
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="recent--worker">
+                <div class="title">
+                    <h2 class="section--title">My Service List</h2>
+                    <button class="add"><i class="ri-add-line"></i>Add Service</button>
+                </div>
+                <div class="table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Details</th>
+                                <th>Date in</th>
+                                <th>Status</th>
+                                <th>Price</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Keep the new home neat & clean</td>
+                                <td>When you enter a house, the first thing that comes to you is the smell. If your new
+                                    home is not properly clean, it is not a good sign<span id="dots">...</span><span
+                                        id="more"> for you to move your new appliances there. Because after moving you
+                                        have to place all of them somewhere you don’t have enough time to clean all
+                                        stuff.
+                                        Every soul benefits from being neat and tidy. It is also an aspect of our Iman.
+                                        As a result, you want purity in your home and yourself. Cleanliness gives the
+                                        kid a clear mind and promotes constructive thinking. Take the size of the screen
+                                        of the new residence’s door and window and allow it to be used in advance to
+                                        keep your house tidy and clean. Before heading to a new house, go one or two
+                                        days after and check to see if it is safe. Clean them if there is dust in the
+                                        place. Tell the homeowner to color if they are not coloured. Clean the bathrooms
+                                        ahead of time, and enjoy your new home.</span>
+                                    <button onclick="myFunction()" id="myBtn" class="btn btn-link">Read more</button>
+                                </td>
+                                <td>30/07/2022</td>
+                                <td class="confirmed">Active</td>
+                                <td>$200.00</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Keep the new home neat & clean</td>
+                                <td>When you enter a house, the first thing that comes to you is the smell. If your new
+                                    home is not properly clean, it is not a good sign<span id="dots2">...</span><span
+                                        id="more2"> for you to move your new appliances there. Because after moving you
+                                        have to place all of them somewhere you don’t have enough time to clean all
+                                        stuff. Every soul benefits from being neat and tidy. It is also an aspect of our
+                                        Iman.
+                                        As a result, you want purity in your home and yourself. Cleanliness gives the
+                                        kid a clear mind and promotes constructive thinking. Take the size of the screen
+                                        of the new residence’s door and window and allow it to be used in advance to
+                                        keep your house tidy and clean. Before heading to a new house, go one or two
+                                        days after and check to see if it
+                                        is safe. Clean them if there is dust in the place. Tell the homeowner to color
+                                        if they are not coloured. Clean the bathrooms ahead of time, and enjoy your new
+                                        home.</span>
+                                    <button onclick="myFunction2()" id="myBtn2" class="btn btn-link">Read more</button>
+                                </td>
+                                <td>30/07/2022</td>
+                                <td class="confirmed">Active</td>
+                                <td>$200.00</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/service.js"></script>
+
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+
+        function myFunction2() {
+            var dots2 = document.getElementById("dots2");
+            var moreText2 = document.getElementById("more2");
+            var btnText2 = document.getElementById("myBtn2");
+            if (dots2.style.display === "none") {
+                dots2.style.display = "inline";
+                btnText2.innerHTML = "Read more";
+                moreText2.style.display = "none";
+            } else {
+                dots2.style.display = "none";
+                btnText2.innerHTML = "Read less";
+                moreText2.style.display = "inline";
+            }
+
+        }
+
+    </script>
+
+    <%- include ('../template/footer') %>

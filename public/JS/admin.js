@@ -6,3 +6,5 @@ menu.onclick = function() {
     sidebar.classList.toggle('active')
     mainContent.classList.toggle('active')
 }
+
+

@@ -11,6 +11,10 @@ const UserController = {
     res.render('pages/admin')
   },
 
+  getService: async (req, res) => {
+    res.render('pages/service')
+  },
+
   getSignupForm: async (req, res) => {
     res.render('pages/signup')
   },
