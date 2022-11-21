@@ -7,14 +7,25 @@ const UserController = {
   getHome: async (req, res) => {
     res.render('pages/home')
   },
+  getAbout: async (req, res) => {
+    res.render('pages/about')
+  },
+  getContact: async (req, res) => {
+    res.render('pages/contact')
+  },
+  getOffer: async (req, res) => {
+    res.render('pages/offer')
+  },
+  getServices: async (req, res) => {
+    res.render('pages/services')
+  },
+  // Admin Related
   getAdmin: async (req, res) => {
     res.render('pages/admin')
   },
-
   getService: async (req, res) => {
     res.render('pages/service')
   },
-
   getSignupForm: async (req, res) => {
     res.render('pages/signup')
   },
