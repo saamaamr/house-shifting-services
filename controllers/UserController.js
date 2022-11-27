@@ -26,6 +26,9 @@ const UserController = {
   getService: async (req, res) => {
     res.render('pages/service')
   },
+  getBooking: async (req, res) => {
+    res.render('pages/booking')
+  },
   getSignupForm: async (req, res) => {
     res.render('pages/signup')
   },
