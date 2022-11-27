@@ -26,23 +26,30 @@ const UserController = {
   getService: async (req, res) => {
     res.render('pages/service')
   },
+  getBooking: async (req, res) => {
+    res.render('pages/booking')
+  },
   getSignupForm: async (req, res) => {
     res.render('pages/signup')
   },
+  getLoginForm: async (req, res) => {
+    res.render('pages/login')
+  },
+
 
   signupData: async (req, res) => {
     try {
       const {
-        firstName, lastName, email, phone, house, road, upazila, zila, role, pass,
+        firstName, lastName, email, phone, house, road, division, upazila, zila, role, pass,
       } = req.body;
       const hash = await bcrypt.hash(pass, 10);
       // console.log(req.body.email)
-      const signup = await UserModels.signup(firstName, lastName, email, phone, house, road, upazila, zila, role, hash);
+      const signup = await UserModels.signup(firstName, lastName, email, phone, house, road,  division, upazila, zila, role, hash);
 
       if (signup.errno) {
         res.send('Something went wrong')
       } else {
-        res.redirect('/')
+        res.redirect('/login')
         // res.send('Signup successfull')
       }
     } catch (e) {
@@ -72,7 +79,7 @@ const UserController = {
               req.session.last_name = login[i].last_name;
               req.session.role = login[i].role;
               console.log("test", login)
-              res.redirect('/');
+              res.redirect('/login');
             }
             else {
               res.send('Incorrect Password');
