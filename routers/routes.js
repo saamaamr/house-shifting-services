@@ -21,7 +21,11 @@ router.post('/login', UserController.loginData)
 router.get('/logout', UserController.getlogout)
 router.get('/admin', UserController.getAdmin)
 router.get('/service', UserController.getService)
-router.get('/booking', UserController.getService)
+router.get('/booking', UserController.getBooking)
+router.get('/user', UserController.getUser)
+router.get('/worker', UserController.getWorker)
+
+
 
 
 

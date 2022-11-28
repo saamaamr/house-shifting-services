@@ -28,6 +28,12 @@ const UserController = {
   },
   getBooking: async (req, res) => {
     res.render('pages/booking')
+  },  
+  getUser: async (req, res) => {
+    res.render('pages/user')
+  },  
+  getWorker: async (req, res) => {
+    res.render('pages/worker')
   },
   getSignupForm: async (req, res) => {
     res.render('pages/signup')
