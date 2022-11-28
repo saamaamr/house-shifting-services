@@ -1,0 +1,224 @@
+<%- include ('../template/aheader') %>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="/admin">
+                        <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
+                        <span class="sidebar--item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/service">
+                        <span class="icon icon-2"><i class="ri-git-repository-line"></i></span>
+                        <span class="sidebar--item">Service</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/booking" id="active--link">
+                        <span class="icon icon-2"><i class="ri-calendar-2-line"></i></span>
+                        <span class="sidebar--item">Booking Schedule</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user">
+                        <span class="icon icon-4"><i class="ri-user-line"></i></span>
+                        <span class="sidebar--item">User</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/worker">
+                        <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Worker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-5"><i class="ri-line-chart-line"></i></span>
+                        <span class="sidebar--item">Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-6"><i class="ri-customer-service-line"></i></span>
+                        <span class="sidebar--item">Support</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li>
+                    <a href="#">
+                        <span class="icon icon-7"><i class="ri-settings-3-line"></i></span>
+                        <span class="sidebar--item">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
+                        <span class="sidebar--item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="recent--worker">
+                <div class="title">
+                    <h2 class="section--title">Booking Schedule List</h2>
+                </div>
+                <div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Serial</th>
+                                <th>Service Title</th>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Mobile Number</th>
+                                <th>Address</th>
+                                <th>Status</th>
+                                <th>Booking Date</th>
+                                <th>Service Date</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">01</td>
+                                <td>Keep the new home neat & clean</td>
+                                <th scope="row">Mr. Hitler</td>
+                                <td>demo1@gmail.com</td>
+                                <td>+880 1234567890</td>
+                                <th scope="row">X villa, 0 no road, khulshi, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>22/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">02</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Mr. Raban</td>
+                                <td>demo2@gmail.com</td>
+                                <td>+880 1234567891</td>
+                                <th scope="row">Y villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>24/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">03</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Mr. Auto</td>
+                                <td>demo3@gmail.com</td>
+                                <td>+880 1234567892</td>
+                                <th scope="row">z villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>25/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">04</td>
+                                <td>Keep the new home neat & clean</td>
+                                <th scope="row">Mr. Lex Luthor</td>
+                                <td>demo4@gmail.com</td>
+                                <td>+880 1234567893</td>
+                                <th scope="row">X villa, 0 no road, khulshi, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>22/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">05</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Mr. Ronan</td>
+                                <td>demo5@gmail.com</td>
+                                <td>+880 1234567894</td>
+                                <th scope="row">Y villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>24/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">06</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Mr. Loki</td>
+                                <td>demo6@gmail.com</td>
+                                <td>+880 1234567895</td>
+                                <th scope="row">z villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>25/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">07</td>
+                                <td>Keep the new home neat & clean</td>
+                                <th scope="row">Mr. Hammer</td>
+                                <td>demo7@gmail.com</td>
+                                <td>+880 1234567896</td>
+                                <th scope="row">X villa, 0 no road, khulshi, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>22/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">08</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Miss. Poison</td>
+                                <td>demo8@gmail.com</td>
+                                <td>+880 1234567897</td>
+                                <th scope="row">Y villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>24/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">09</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Mr. Penguin</td>
+                                <td>demo9@gmail.com</td>
+                                <td>+880 1234567898</td>
+                                <th scope="row">z villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>25/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</td>
+                                <td>Family Home Shifting</td>
+                                <th scope="row">Miss. Harley</td>
+                                <td>demo@gmail.com</td>
+                                <td>+880 1234567899</td>
+                                <th scope="row">z villa, 0 no road, Duble Muring, Chattogam, Chottogram</td>
+                                <td class="pending">pending</td>
+                                <td>25/11/2022</td>
+                                <th scope="row">01/12/2022</td>
+                                <td><span><i class="ri-edit-line edit"></i><i
+                                            class="ri-delete-bin-line delete"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src=""></script>
+
+   

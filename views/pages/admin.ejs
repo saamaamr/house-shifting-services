@@ -1,31 +1,4 @@
-<%- include ('../template/header') %>
-
-<section class="header">
-    <div class="logo">
-        <i class="ri-menu-line icon icon-0 menu"></i>
-        <h2>House<span>Shifting</span></h2>
-    </div>
-    <div class="search--notification--profile">
-        <div class="search">
-            <input type="text" placeholder="Search Scdule..">
-            <button><i class="ri-search-2-line"></i></button>
-        </div>
-        <div class="notification--profile">
-            <div class="picon lock">
-                <i class="ri-lock-line"></i>
-            </div>
-            <div class="picon bell">
-                <i class="ri-notification-2-line"></i>
-            </div>
-            <div class="picon chat">
-                <i class="ri-wechat-2-line"></i>
-            </div>
-            <div class="picon profile">
-                <img src="/images/profile.png" alt="">
-            </div>
-        </div>
-    </div>
-</section>
+<%- include ('../template/aheader') %>
 <section class="main">
     <div class="sidebar">
         <ul class="sidebar--items">
@@ -42,21 +15,21 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/booking">
                     <span class="icon icon-2"><i class="ri-calendar-2-line"></i></span>
                     <span class="sidebar--item">Booking Schedule</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
-                    <span class="sidebar--item" style="white-space: nowrap;">Worker</span>
+                <a href="/user">
+                    <span class="icon icon-4"><i class="ri-user-line"></i></span>
+                    <span class="sidebar--item">User</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <span class="icon icon-4"><i class="ri-user-line"></i></span>
-                    <span class="sidebar--item">User</span>
+                <a href="/worker">
+                    <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
+                    <span class="sidebar--item" style="white-space: nowrap;">Worker</span>
                 </a>
             </li>
             <li>
@@ -303,4 +276,3 @@
 </section>
 <script src="/js/admin.js"></script>
 
-<%- include ('../template/footer') %>

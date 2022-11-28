@@ -8,6 +8,7 @@
                             <p class="h3">Welcome
                                 <%- session.first_name %>
                                     <%- session.last_name %>
+
                             </p>
                             <blockquote class="blockquote">
                                 <p>
@@ -32,9 +33,9 @@
                                                 Email:</label>
                                             <input type="email" class="form-control" name="email" required />
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-3" hidden>
                                             <label for="" class="form-label"> Role:</label>
-                                            <select class="form-select" name="role" aria-label="Default select example">
+                                            <select class="form-select" id="role" name="role" aria-label="Default select example">
                                                 <option selected required>Select Role :</option>
                                                 <option value="user">User</option>
                                                 <option value="worker">Worker</option>
@@ -61,17 +62,16 @@
                                             </figure>
                                         </div>
                                         <div class="d-grid gap-2 col-4 mx-auto">
-                                            <a href="/signup" class="btn btn-info rounded-pill" type="button">SignUp    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></a>
+                                            <a href="/signup" class="btn btn-info rounded-pill" type="button">SignUp!</a>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
 
+                        <script src="/js/signup.js"></script>
                         <% } %>
             </div>
         </div>
     </div>
 
-
-    <%- include ('../template/footer') %>
