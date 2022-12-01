@@ -41,6 +41,8 @@ const UserController = {
   getLoginForm: async (req, res) => {
     res.render('pages/login')
   },
+
+
   signupData: async (req, res) => {
     try {
       const {
