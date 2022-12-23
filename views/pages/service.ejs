@@ -1,4 +1,5 @@
 <%- include ('../template/aheader') %>
+
     <section class="main">
         <div class="sidebar">
             <ul class="sidebar--items">
@@ -70,16 +71,46 @@
                         <div class="mb-3 col-12">
                             <label for="exampleFormControlInput1" class="form-label">Service Title</label>
                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Enter Service Title">
+                                placeholder="Enter Service Title" name="title">
                         </div>
+                        <div class="mb-3 col-12">
+
+                            <div class="md-3 row">
+                                <div class="md-3 col">
+                                    <label for="date" class="col-form-label">Date</label>
+                                    <div>
+                                        <div class="input-group date" id="datepicker">
+                                            <input type="date" id="date" class="form-control" id="date">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="md-3 col">
+                                    <label for="exampleFormControlInput1" class="col-form-label">Status</label>
+                                    <div>
+                                        <div>
+                                            <select class="form-select" name="status"
+                                                aria-label="Default select example">
+                                                <option selected>Select Status:</option>
+                                                <option value="active">Active</option>
+                                                <option value="pending">Pending</option>
+                                                <option value="deactive">Deactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="mb-3 col-12">
                             <label for="exampleFormControlTextarea1" class="form-label">Service Details</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Details..."></textarea>
+                                placeholder="Details..." name="detail"></textarea>
                         </div>
                         <div class="mb-3 col-12">
                             <label for="exampleFormControlInput1" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="$100.00">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="$100.00"
+                                name="price">
                         </div>
 
                         <!-- button -->
@@ -231,5 +262,9 @@
             }
 
         }
+
+        $(function () {
+            $('#datepicker').datepicker();
+        });
 
     </script>
