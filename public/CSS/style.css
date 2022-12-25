@@ -831,7 +831,7 @@ a:focus {
   margin-bottom: 25px;
 }
 
-.contact_section input {
+.contact_section input,select {
   width: 100%;
   border: none;
   height: 50px;
@@ -895,14 +895,25 @@ a:focus {
   border-radius: 0;
 }
 
+
 .contact_section input.message-box:focus {
   outline: none;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: 1px solid #ebebeb;
   background: #ffffff;
 }
 
+.contact_section input.file-box {
+  padding: 12px;
+  border-radius: 0;
+}
+
+.contact_section h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center
+}
 .contact_section .btn-box {
   margin-top: 40px;
   display: -webkit-box;
@@ -948,6 +959,27 @@ a:focus {
 }
 
 .contact_section .btn-box .map_btn:hover {
+  background-color: transparent;
+  color: #1f4172;
+}
+
+.contact_section .add_btn {
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #1f4172;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: 1px solid #1f4172;
+  /* margin: 5px; */
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contact_section  .add_btn:hover {
   background-color: transparent;
   color: #1f4172;
 }
@@ -1098,7 +1130,14 @@ a:focus {
 .social-box a:hover {
   color: #87CEEB;
 }
+.edit {
+  color: #70d7a5;
+  margin-right: 10px;
+}
 
+.delete {
+  color: #e86786;
+}
 .footer_form input {
   width: 100%;
   border: none;

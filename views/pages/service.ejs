@@ -74,7 +74,58 @@
                                 placeholder="Enter Service Title" name="title">
                         </div>
                         <div class="mb-3 col-12">
+                            <div class="md-3 row">
+                                <div class="md-5 col-5">
+                                    <label for="exampleFormControlInput1" class="col-form-label">Items</label>
 
+                                    <div>
+                                        <select class="form-select" name="items" aria-label="Default select example">
+                                            <option selected>Select Moving Item:</option>
+                                            <option value="Packets">Packets</option>
+                                            <option value="Khat">Bedstead(Khat)</option>
+                                            <option value="Almirah">Almirah</option>
+                                            <option value="Chair">Chair</option>
+                                            <option value="Table">Table</option>
+                                            <option value="Dressing-Table">Dressing Table</option>
+                                            <option value="Wardrobe">Wardrobe</option>
+                                            <option value="Cabinate">Cabinate</option>
+                                            <option value="Fan">Fan</option>
+                                            <option value="Frize">Frize</option>
+                                            <option value="AC">AC</option>
+                                            <option value="Washing-Machine">Washing Machine</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="md-5 col-5">
+                                    <label for="exampleFormControlInput1" class="col-form-label">Quantity</label>
+                                    <div>
+                                        <div>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="md-5 col-2">
+                                    <label class="col-form-label">Add more</label>
+                                    <div>
+                                        <button class="btn btn-primary">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="exampleFormControlTextarea1" class="form-label">Other Details</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Details..." name="detail"></textarea>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="exampleFormControlInput1" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="৳ 1000.00" name="price">
+                        </div>
+                        <div class="mb-3 col-12">
                             <div class="md-3 row">
                                 <div class="md-3 col">
                                     <label for="date" class="col-form-label">Date</label>
@@ -84,7 +135,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="md-3 col">
                                     <label for="exampleFormControlInput1" class="col-form-label">Status</label>
                                     <div>
@@ -101,18 +151,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="mb-3 col-12">
-                            <label for="exampleFormControlTextarea1" class="form-label">Service Details</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Details..." name="detail"></textarea>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <label for="exampleFormControlInput1" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="$100.00"
-                                name="price">
-                        </div>
-
                         <!-- button -->
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -134,7 +172,7 @@
                                 <th>Date in</th>
                                 <th>Status</th>
                                 <th>Price</th>
-                                <th>Settings</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
