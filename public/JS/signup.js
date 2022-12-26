@@ -44,6 +44,11 @@ const test = document.getElementById("division")
 test.onclick = function () {
   dist = document.getElementById("division").value
 
+  var list = document.getElementById("district").getElementsByTagName("option");
+  for (var k = list.length - 1; k >= 1; k--) {
+    var item = list[k];
+    item.parentNode.removeChild(item);
+  }
   const districtsList = document.querySelector('.districts');
   const upazilaList = document.querySelector('.upazilla');
   const endPoint = `https://bdapis.com/api/v1.1/division/${dist}`;
@@ -66,6 +71,13 @@ test.onclick = function () {
 
       })
       document.querySelector('.districts').onclick = function () {
+
+        var list = document.getElementById("upazilla").getElementsByTagName("option");
+        for (var k = list.length - 1; k >= 1; k--) {
+          var item = list[k];
+          item.parentNode.removeChild(item);
+        } 
+
         dindex = document.querySelector('.districts').value
 
         const allUpazilla = districts.data;
