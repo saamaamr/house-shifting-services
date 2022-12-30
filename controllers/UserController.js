@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const { servie } = require('../models/UserModels');
 const UserModels = require('../models/UserModels');
 
 
@@ -28,9 +29,9 @@ const UserController = {
   },
   getBooking: async (req, res) => {
     res.render('pages/booking')
-  },  
+  },
   getUser: async (req, res) => {
-    res.render('pages/user')
+    res.render('pages/user',)
   },  
   getWorker: async (req, res) => {
     res.render('pages/worker')
@@ -41,6 +42,10 @@ const UserController = {
   getLoginForm: async (req, res) => {
     res.render('pages/login')
   },
+  getaService: async (req, res) => {
+    res.render('pages/service')
+  },
+
 
 
   signupData: async (req, res) => {
@@ -49,24 +54,27 @@ const UserController = {
         firstName, lastName, email, phone, house, road, division, upazila, zila, role, pass,
       } = req.body;
       const hash = await bcrypt.hash(pass, 10);
-      // console.log(req.body.email)
-      const signup = await UserModels.signup(firstName, lastName, email, phone, house, road,  division, upazila, zila, role, hash);
+      const signup = await UserModels.signup(firstName, lastName, email, phone, house, road, division, upazila, zila, role, hash);
 
       if (signup.errno) {
         res.send('Something went wrong')
       } else {
         res.redirect('/login')
-        // res.send('Signup successfull')
+
       }
     } catch (e) {
       console.log(e);
       res.send('Wrong')
     }
   },
-
+  getServiceData: async (req, res) => {
+    const allService= await UserModels.getaService()
+    res.render('pages/service',{allService})
+  },
   getloginForm: async (req, res) => {
     res.render('pages/login', { title: 'Express', session: req.session })
   },
+
   loginData: async (req, res) => {
     try {
 
@@ -88,7 +96,7 @@ const UserController = {
               res.redirect('/login');
             }
             else {
-              res.send('Incorrect Password');
+              res.send('Incorrect Password or Role');
             }
           }
         }
@@ -115,6 +123,23 @@ const UserController = {
   getlogout: (req, res) => {
     req.session.destroy();
     res.redirect('/')
+  },
+  serviceData: async (req, res) => {
+    try {
+      const {
+        stitle, items, details, price, date, status
+      } = req.body;
+      const servie = await UserModels.servie(stitle, items, details, price, date, status);
+
+      if (servie.errno) {
+        res.send('Something went wrong')
+      } else {
+        res.redirect('/service')
+      }
+    } catch (e) {
+      console.log(e);
+      res.send('Wrong')
+    }
   },
 
 }

@@ -69,17 +69,33 @@
                 <div class="container">
                     <form action="/add-service" method="post">
                         <div class="mb-3 col-12">
-                            <label for="exampleFormControlInput1" class="form-label">Service Title</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Enter Service Title" name="title">
+                            <label for="stile" class="form-label">Service Title</label>
+                            <input type="text" class="form-control" id="stitle" placeholder="Enter Service Title"
+                                name="stitle">
                         </div>
+
+                        <div class="info-box table">
+                            <table id="output" class="table">
+                                <thead>
+                                    <td>Item</td>
+                                    <td>Quantity</td>
+                                    <td>Action</td>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="items" class="form-label">Items</label>
+                            <textarea class="form-control" id="items" rows="3" placeholder="Details..."
+                                name="items"></textarea>
+                        </div>
+
                         <div class="mb-3 col-12">
                             <div class="md-3 row">
                                 <div class="md-5 col-5">
-                                    <label for="exampleFormControlInput1" class="col-form-label">Items</label>
-
+                                    <label for="item" class="col-form-label">Item</label>
                                     <div>
-                                        <select class="form-select" name="items" aria-label="Default select example">
+                                        <select class="form-select" id="item" aria-label="Default select example">
                                             <option selected>Select Moving Item:</option>
                                             <option value="Packets">Packets</option>
                                             <option value="Khat">Bedstead(Khat)</option>
@@ -99,10 +115,10 @@
                                     </div>
                                 </div>
                                 <div class="md-5 col-5">
-                                    <label for="exampleFormControlInput1" class="col-form-label">Quantity</label>
+                                    <label for="quantity" class="col-form-label">Quantity</label>
                                     <div>
                                         <div>
-                                            <input type="number" class="form-control">
+                                            <input type="number" class="form-control" id="quantity">
                                         </div>
                                     </div>
                                 </div>
@@ -110,20 +126,19 @@
                                 <div class="md-5 col-2">
                                     <label class="col-form-label">Add more</label>
                                     <div>
-                                        <button class="btn btn-primary">Add</button>
+                                        <a onclick="add()" class="btn btn-primary" id="add">Add</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3 col-12">
-                            <label for="exampleFormControlTextarea1" class="form-label">Other Details</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Details..." name="detail"></textarea>
+                            <label for="details" class="form-label">Other Details</label>
+                            <textarea class="form-control" id="details" rows="3" placeholder="Details..."
+                                name="details"></textarea>
                         </div>
                         <div class="mb-3 col-12">
-                            <label for="exampleFormControlInput1" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="৳ 1000.00" name="price">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="price" placeholder="৳ 1000.00" name="price">
                         </div>
                         <div class="mb-3 col-12">
                             <div class="md-3 row">
@@ -131,12 +146,12 @@
                                     <label for="date" class="col-form-label">Date</label>
                                     <div>
                                         <div class="input-group date" id="datepicker">
-                                            <input type="date" id="date" class="form-control" id="date">
+                                            <input type="date" id="date" class="form-control" name="date" id="date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="md-3 col">
-                                    <label for="exampleFormControlInput1" class="col-form-label">Status</label>
+                                    <label for=" " class="col-form-label">Status</label>
                                     <div>
                                         <div>
                                             <select class="form-select" name="status"
@@ -255,6 +270,13 @@
                                             class="ri-delete-bin-line delete"></i></span></td>
                             </tr>
 
+                            <tr>
+                                <% allService.map(service=>{ %>
+                                <th scope="row"><%= service.stitle%></th>
+
+                                    <% }) %>
+                            </tr>
+
 
                         </tbody>
                     </table>
@@ -301,8 +323,17 @@
 
         }
 
-        $(function () {
-            $('#datepicker').datepicker();
-        });
+        function add() {
+            let item = document.getElementById("item");
+            let quantity = document.getElementById("quantity");
+            let output = document.querySelector("#output tbody");
+            let items = document.getElementById("items");
+            output.innerHTML += "<tr><td>" + item.value + "</td><td>" + quantity.value + "</td><td><span><i class='ri-edit-line edit'></i></span><span><i class='ri-delete-bin-line delete'></i></span></td></tr>"
+            items.innerHTML += " " + item.value + " - " + quantity.value + " pice(s),"
+
+
+
+        }
+
 
     </script>
