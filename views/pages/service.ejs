@@ -84,7 +84,7 @@
                                 <tbody></tbody>
                             </table>
                         </div>
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 col-12" hidden>
                             <label for="items" class="form-label">Items</label>
                             <textarea class="form-control" id="items" rows="3" placeholder="Details..."
                                 name="items"></textarea>
@@ -157,9 +157,9 @@
                                             <select class="form-select" name="status"
                                                 aria-label="Default select example">
                                                 <option selected>Select Status:</option>
-                                                <option value="active">Active</option>
-                                                <option value="pending">Pending</option>
-                                                <option value="deactive">Deactive</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Pending">Pending</option>
+                                                <option value="Deactive">Deactive</option>
                                             </select>
                                         </div>
                                     </div>
@@ -191,88 +191,53 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">Keep the new home neat & clean</td>
-                                <td>When you enter a house, the first thing that comes to you is the smell. If your new
-                                    home is not properly clean, it is not a good sign<span id="dots">...</span><span
-                                        id="more"> for you to move your new appliances there. Because after moving you
-                                        have to place all of them somewhere you don’t have enough time to clean all
-                                        stuff.
-                                        Every soul benefits from being neat and tidy. It is also an aspect of our Iman.
-                                        As a result, you want purity in your home and yourself. Cleanliness gives the
-                                        kid a clear mind and promotes constructive thinking. Take the size of the screen
-                                        of the new residence’s door and window and allow it to be used in advance to
-                                        keep your house tidy and clean. Before heading to a new house, go one or two
-                                        days after and check to see if it is safe. Clean them if there is dust in the
-                                        place. Tell the homeowner to color if they are not coloured. Clean the bathrooms
-                                        ahead of time, and enjoy your new home.</span>
-                                    <button onclick="myFunction()" id="myBtn" class="btn btn-link">Read more</button>
-                                </td>
-                                <td>30/07/2022</td>
-                                <td class="confirmed">Active</td>
-                                <td>$200.00</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Keep the new home neat & clean</td>
-                                <td>When you enter a house, the first thing that comes to you is the smell. If your new
-                                    home is not properly clean, it is not a good sign<span id="dots2">...</span><span
-                                        id="more2"> for you to move your new appliances there. Because after moving you
-                                        have to place all of them somewhere you don’t have enough time to clean all
-                                        stuff. Every soul benefits from being neat and tidy. It is also an aspect of our
-                                        Iman.
-                                        As a result, you want purity in your home and yourself. Cleanliness gives the
-                                        kid a clear mind and promotes constructive thinking. Take the size of the screen
-                                        of the new residence’s door and window and allow it to be used in advance to
-                                        keep your house tidy and clean. Before heading to a new house, go one or two
-                                        days after and check to see if it
-                                        is safe. Clean them if there is dust in the place. Tell the homeowner to color
-                                        if they are not coloured. Clean the bathrooms ahead of time, and enjoy your new
-                                        home.</span>
-                                    <button onclick="myFunction2()" id="myBtn2" class="btn btn-link">Read more</button>
-                                </td>
-                                <td>30/07/2022</td>
-                                <td class="confirmed">Active</td>
-                                <td>$200.00</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">Keep the new home neat & clean</td>
-                                <td>
-                                    <details>
-                                        <summary>When you enter a house, the first thing that comes to you is the smell.
-                                            If your new
-                                            home is not properly clean, it is not a good sign for you to move your new
-                                            appliances there.</summary> Because after moving you have to place all of
-                                        them somewhere you
-                                        don’t have enough time to clean all
-                                        stuff. Every soul benefits from being neat and tidy. It is also an aspect of our
-                                        Iman. As a result, you want purity in your home and yourself. Cleanliness gives
-                                        the
-                                        kid a clear mind and promotes constructive thinking. Take the size of the screen
-                                        of the new residence’s door and window and allow it to be used in advance to
-                                        keep your house tidy and clean. Before heading to a new house, go one or two
-                                        days after and check to see if it safe. Clean them if there is dust in the
-                                        place.
-                                        Tell the homeowner to color
-                                        if they are not coloured. Clean the bathrooms ahead of time, and enjoy your new
-                                        home.
-
-                                    </details>
-                                </td>
-                                <td>30/07/2022</td>
-                                <td class="confirmed">Active</td>
-                                <td>$200.00</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
-
+                            
+                            
                             <tr>
                                 <% allService.map(service=>{ %>
-                                <th scope="row"><%= service.stitle%></th>
+                                    <th scope="row">
+                                        <%= service.stitle%>
+                                    </th>
+                                    <td>
+                                        <%= service.items%><span id="dots">...</span><span
+                                        id="more"> also <%= service.details%></span>
+                                    <button onclick="myFunction()" id="myBtn" class="btn btn-link">Read more</button>
+
+                                    </td>
+                                    <td>
+                                        <%= service.fdate%>
+                                    </td>
+                                    <td>
+                                        <%= service.status%>
+                                    </td>
+                                    <td>
+                                        <%= service.price%> BDT
+                                    </td>
+                                    <td><span><i class="ri-edit-line edit"></i><i
+                                                class="ri-delete-bin-line delete"></i></span></td>
+
+                                    <% }) %>
+                            </tr>
+                            
+                            <tr>
+                                <% allService.map(service=>{ %>
+                                    <th scope="row">
+                                        <%= service.stitle%>
+                                    </th>
+                                    <td>
+                                        <%= service.items%> also <%= service.details%>
+                                    </td>
+                                    <td>
+                                        <%= service.fdate%>
+                                    </td>
+                                    <td>
+                                        <%= service.status%>
+                                    </td>
+                                    <td>
+                                        <%= service.price%> BDT
+                                    </td>
+                                    <td><span><i class="ri-edit-line edit"></i><i
+                                                class="ri-delete-bin-line delete"></i></span></td>
 
                                     <% }) %>
                             </tr>

@@ -1,79 +1,178 @@
-<%- include ('../template/header') -%>
-  <div class="container">
+<%- include("../template/header"); -%>
+<%- include ('../template/nav') -%>
+
+  <div class="container mt-5">
+    <h4 class="text-center">Register Form.</h4>
+
     <div class="row">
-      <div class="col-m  <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-8 offset-2 mt-4 card p-4">
-            <h4 class="mt-2">Signup</h4>
-             <div class="mt-3 login-and-res">
-              <form action="/add-user" method="post">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="" class="form-label"><i class="las la-user"></i>First Name:</label>
-                      <input type="text" name="firstName" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                      <label for="" class="form-label"><i class="las la-mobile"></i> Last Name:</label>
-                      <input type="text" name="lastName" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                      <label for="" class="form-label"><i class="las la-mobile"></i> Phone:</label>
-                      <input type="tel" class="form-control" name="phone" required />
-                    </div>
-                    <div class="mb-3">
-                      <label for="" class="form-label"><i class="las la-mobile"></i> Email:</label>
-                      <input type="email" class="form-control" name="email" required />
-                    </div>
-                    <div class="mb-3">
-                      <label for="" class="form-label"><i class="las la-mobile"></i> House:</label>
-                      <input type="text" name="house" class="form-control" required />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="" class="form-label"><i class="las la-road"></i> Street Address:</label>
-                      <input type="text" class="form-control" name="road" required />
-                    </div>
-                    <div class="mb-3">
-                      <label for="" class="form-label">Division:</label>
-                      <select class="form-select divisions" name="division" id="division" aria-label="Default select example">
-                        <option selected>Select Division</option>
-                      </select>
-                    </div>
-                    <div class="mb-3">
-                      <label for="district" class="form-label">Zila:</label>
-                      <select class="form-select districts" name="zila" id="district" aria-label="Default select example">
-                        <option selected>Select Zila:</option>
-                    </select>
-                    </div>
-                    <div class="mb-3">
-                      <label for="" class="form-label">Upazila:</label>
-                      <select class="form-select upazilla" name="upazilla" id="upazilla" aria-label="Default select example">
-                        <option selected>Select Upzila:</option>
-                      </select>
-                  </div>
-                <div class="mb-3" hidden>
-                  <label for="" class="form-label"> Role:</label>
-                  <select class="form-select" id="role" name="role" aria-label="Default select example">
+      <div class="col-md-6 offset-3">
+        <form action="/signup" method="post">
+          <div class="form-floating mb-3">
+            <input type="text" class="<%= error.firstName ? 'error' : '' %>  form-control" id="floatingInputfn"
+              name="firstName" placeholder="Jhon" value="<%= value.firstName ? value.firstName : '' %>" />
+            <label for="floatingInputfn">First Name</label>
+            <p class="text-danger p-2">
+              <%= error.firstName && error.firstName %>
+            </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="<%= error.lastName ? 'error' : '' %>  form-control" id="floatingInputln"
+              name="lastName" placeholder="Jhon" value="<%= value.lastName ? value.lastName : '' %>" />
+            <label for="floatingInputln">Last Name</label>
+            <p class="text-danger p-2">
+              <%= error.lastName && error.lastName %>
+            </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="<%= error.phone ? 'error' : '' %>  form-control" id="floatingInputpn" name="phone"
+              placeholder="018XXXXXXXX" value="<%= value.phone ? value.phone : '' %>" />
+            <label for="floatingInputpn">Phone Number</label>
+            <p class="text-danger p-2">
+              <%= error.phone && error.phone %>
+            </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="<%= error.email ? 'error' : '' %> form-control" id="floatingInputEmail"
+              name="email" placeholder="name@example.com" value="<%= value.email ? value.email : '' %> " />
+            <label for="floatingInputEmail">Email address</label>
+            <p class="text-danger p-2">
+              <%= error.email && error.email %>
+            </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="<%= error.house ? 'error' : '' %>  form-control"
+              id="floatingInputHouse"
+              name="house"
+              placeholder="Molla Vari"
+              value="<%= value.house ? value.house : '' %>"
+            />
+            <label for="floatingInputHouse">House</label>
+            <p class="text-danger p-2"><%= error.house && error.house %> </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="<%= error.road ? 'error' : '' %>  form-control"
+              id="floatingInputRoad"
+              name="road"
+              placeholder=" "
+              value="<%= value.road ? value.road : '' %>"
+            />
+            <label for="floatingInputRoad">Road</label>
+            <p class="text-danger p-2"><%= error.road && error.road %> </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="<%= error.division ? 'error' : '' %>  form-control"
+              id="floatingInputDiv"
+              name="division"
+              placeholder="Dhaka"
+              value="<%= value.division ? value.division : '' %>"
+            />
+            <label for="floatingInputDiv">Division</label>
+            <p class="text-danger p-2"><%= error.division && error.division %> </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="<%= error.zila ? 'error' : '' %>  form-control"
+              id="floatingInputZila"
+              name="zila"
+              placeholder="zila"
+              value="<%= value.zila ? value.zila : '' %>"
+            />
+            <label for="floatingInputZila">Districts</label>
+            <p class="text-danger p-2"><%= error.zila && error.zila %> </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="<%= error.upazila ? 'error' : '' %>  form-control"
+              id="floatingInputUpa"
+              name="upazila"
+              placeholder="Savar"
+              value="<%= value.upazila ? value.upazila : '' %>"
+            />
+            <label for="floatingInputUpa">Upazila</label>
+            <p class="text-danger p-2"><%= error.upazila && error.upazila %> </p>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="<%= error.role ? 'error' : '' %>  form-control"
+              id="floatingInputRole"
+              name="role"
+              placeholder="user"
+              value="<%= value.role ? value.role : '' %>"
+            />
+            <label for="floatingInputRole">Role</label>
+            <p class="text-danger p-2"><%= error.role && error.role %> </p>
+          </div>
 
-                    <option selected required>Select Role :</option>
-                    <option value="user">User</option>
-                    <option value="worker">Worker</option>
-                  </select>
-                </div>
+          <div class="form-floating">
+            <input type="password" class=" <%= error.paa ? 'error' : '' %> form-control" name="pass"
+              id="floatingPassword" placeholder="Password" value="<%= value.pass ? value.pass : '' %>" />
+            <label for="floatingPassword">Password</label>
+            <p class="text-danger p-2">
+              <%= error.pass && error.pass %>
+            </p>
+          </div>
 
-                <div class="mb-3">
-                  <label for="" class="form-label"><i class="las la-mobile"></i> Password:</label>
-                  <input type="password" class="form-control" name="pass" required />
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</span></button> <a href="/login" class="btn btn-link">Already have an
-              account!</a>
-          </form>
-        </div>
+          <button type="submit" class="btn btn-info mt-3 rounded-pill">
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   </div>
+
+  <%- include("../template/lfooter"); -%>
+
   <script src="/js/signup.js"></script>
+
+    <script>
+      let auth = '<%= auth %>';
+      let workerauth = '<%= workerauth %>';
+      let registerFail = '<%= registerFail %>';
+
+      if (auth === "true") {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed in successfully'
+        })
+        setTimeout(function () { window.location = '/login' }, 3000);
+      }
+      if (registerFail === "true") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'This email already exist',
+          footer: '<a href="/login">Have an account?</a>'
+        })
+      }
+      if (workerauth === "true") {
+        Swal.fire({
+          icon: 'sucess',
+          title: 'You Request Send',
+          text: 'Please wait for confirmation.',
+          footer: '<a href="/login">Have an account?</a>'
+        })
+        setTimeout(function () { window.location = '/login' }, 3000*10);
+      }
+
+    </script>
