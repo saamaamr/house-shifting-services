@@ -96,19 +96,25 @@
               placeholder="Savar"
               value="<%= value.upazila ? value.upazila : '' %>"
             />
-            <label for="floatingInputUpa">Upazila</label>
+            <label for="floatingInputUpa">Upazila/Thana</label>
             <p class="text-danger p-2"><%= error.upazila && error.upazila %> </p>
           </div>
           <div class="form-floating mb-3">
-            <input
+            <!-- <input
               type="text"
               class="<%= error.role ? 'error' : '' %>  form-control"
               id="floatingInputRole"
               name="role"
               placeholder="user"
               value="<%= value.role ? value.role : '' %>"
-            />
-            <label for="floatingInputRole">Role</label>
+              <label for="floatingInputRole">Role</label>
+            /> -->
+            <select class=" <%= error.role ? 'error' : '' %> form-select" id="role" name="role" aria-label="Default select example">
+              <option selected required>Select Role :</option>
+              <option value="user">User</option>
+              <option value="worker">Worker</option>
+            </select>
+            <label for="role">Role</label>
             <p class="text-danger p-2"><%= error.role && error.role %> </p>
           </div>
 
