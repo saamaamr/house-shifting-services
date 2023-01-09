@@ -190,38 +190,9 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-
-
+                        <tbody>                   
                             <% allService.map(service=>{ %>
-                                <tr>
-                                    <th scope="row">
-                                        <%= service.stitle%>
-                                    </th>
-                                    <td>
-                                        <%= service.items%><span id="dots">...</span><span id="more"> also <%=
-                                                    service.details%></span>
-                                            <button onclick="myFunction()" id="myBtn" class="btn btn-link">Read
-                                                more</button>
-
-                                    </td>
-                                    <td>
-                                        <%= service.fdate%>
-                                    </td>
-                                    <td>
-                                        <%= service.status%>
-                                    </td>
-                                    <td>
-                                        <%= service.price%> BDT
-                                    </td>
-                                    <td><span><i class="ri-edit-line edit"></i><i
-                                                class="ri-delete-bin-line delete"></i></span></td>
-
-                                </tr>
-                                <% }) %>
-
                                     <tr>
-                                        <% allService.map(service=>{ %>
                                             <th scope="row">
                                                 <%= service.stitle%>
                                             </th>
@@ -240,8 +211,8 @@
                                             <td><span><i class="ri-edit-line edit"></i><i
                                                         class="ri-delete-bin-line delete"></i></span></td>
 
-                                            <% }) %>
-                                    </tr>
+                                                    </tr>
+                                                    <% }) %>
 
 
                         </tbody>
@@ -254,41 +225,6 @@
     <script src="/js/service.js"></script>
 
     <script>
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
-
-
-
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
-        }
-
-
-        function myFunction2() {
-            var dots2 = document.getElementById("dots2");
-            var moreText2 = document.getElementById("more2");
-            var btnText2 = document.getElementById("myBtn2");
-            if (dots2.style.display === "none") {
-                dots2.style.display = "inline";
-                btnText2.innerHTML = "Read more";
-                moreText2.style.display = "none";
-            } else {
-                dots2.style.display = "none";
-                btnText2.innerHTML = "Read less";
-                moreText2.style.display = "inline";
-            }
-
-        }
-
         function add() {
             let item = document.getElementById("item");
             let quantity = document.getElementById("quantity");
@@ -296,10 +232,5 @@
             let items = document.getElementById("items");
             output.innerHTML += "<tr><td>" + item.value + "</td><td>" + quantity.value + "</td><td><span><i class='ri-edit-line edit'></i></span><span><i class='ri-delete-bin-line delete'></i></span></td></tr>"
             items.innerHTML += " " + item.value + " - " + quantity.value + " pice(s),"
-
-
-
         }
-
-
     </script>

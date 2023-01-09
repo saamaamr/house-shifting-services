@@ -565,8 +565,11 @@ a:focus {
   padding: 0 20px;
   text-align: center;
   color: #ffffff;
-}
 
+}
+.service_section .box .detail-box p {
+  height: 200px;
+}
 .service_section .box .detail-box h5 {
   font-weight: bold;
   text-transform: uppercase;
