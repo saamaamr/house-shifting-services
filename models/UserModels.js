@@ -8,12 +8,12 @@ const UserModels = {
   //   const [rows] = await dbConnect.promise().execute(sql, values);
   //   return rows;
   // },
-  // servie: async (stitle, items, details, price, date, status) => {
-  //   const sql = 'INSERT INTO `aservice`(`stitle`, `items`, `details`, `price`, `date`, `status`) VALUES(?,?,?,?,?,?)';
-  //   const values = [stitle, items, details, price, date, status]
-  //   const [rows] = await dbConnect.promise().execute(sql, values);
-  //   return rows;
-  // },
+  servie: async (stitle, items, details, price, date, status) => {
+    const sql = 'INSERT INTO `aservice`(`stitle`, `items`, `details`, `price`, `date`, `status`) VALUES(?,?,?,?,?,?)';
+    const values = [stitle, items, details, price, date, status]
+    const [rows] = await dbConnect.promise().execute(sql, values);
+    return rows;
+  },
   login: async (email) => {
     const sql = `SELECT * FROM users Where email="${email}" `;
     const [rows] = await dbConnect.promise().execute(sql);

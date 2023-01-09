@@ -191,17 +191,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            
-                            <tr>
-                                <% allService.map(service=>{ %>
+
+
+                            <% allService.map(service=>{ %>
+                                <tr>
                                     <th scope="row">
                                         <%= service.stitle%>
                                     </th>
                                     <td>
-                                        <%= service.items%><span id="dots">...</span><span
-                                        id="more"> also <%= service.details%></span>
-                                    <button onclick="myFunction()" id="myBtn" class="btn btn-link">Read more</button>
+                                        <%= service.items%><span id="dots">...</span><span id="more"> also <%=
+                                                    service.details%></span>
+                                            <button onclick="myFunction()" id="myBtn" class="btn btn-link">Read
+                                                more</button>
 
                                     </td>
                                     <td>
@@ -216,31 +217,31 @@
                                     <td><span><i class="ri-edit-line edit"></i><i
                                                 class="ri-delete-bin-line delete"></i></span></td>
 
-                                    <% }) %>
-                            </tr>
-                            
-                            <tr>
-                                <% allService.map(service=>{ %>
-                                    <th scope="row">
-                                        <%= service.stitle%>
-                                    </th>
-                                    <td>
-                                        <%= service.items%> also <%= service.details%>
-                                    </td>
-                                    <td>
-                                        <%= service.fdate%>
-                                    </td>
-                                    <td>
-                                        <%= service.status%>
-                                    </td>
-                                    <td>
-                                        <%= service.price%> BDT
-                                    </td>
-                                    <td><span><i class="ri-edit-line edit"></i><i
-                                                class="ri-delete-bin-line delete"></i></span></td>
+                                </tr>
+                                <% }) %>
 
-                                    <% }) %>
-                            </tr>
+                                    <tr>
+                                        <% allService.map(service=>{ %>
+                                            <th scope="row">
+                                                <%= service.stitle%>
+                                            </th>
+                                            <td>
+                                                <%= service.items%> also <%= service.details%>
+                                            </td>
+                                            <td>
+                                                <%= service.fdate%>
+                                            </td>
+                                            <td>
+                                                <%= service.status%>
+                                            </td>
+                                            <td>
+                                                <%= service.price%> BDT
+                                            </td>
+                                            <td><span><i class="ri-edit-line edit"></i><i
+                                                        class="ri-delete-bin-line delete"></i></span></td>
+
+                                            <% }) %>
+                                    </tr>
 
 
                         </tbody>

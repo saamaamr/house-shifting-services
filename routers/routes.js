@@ -12,7 +12,7 @@ const {
 
 //post data
 // router.post('/add-user', UserController.signupData)
-// router.post('/add-service', UserController.serviceData)
+router.post('/add-service', UserController.serviceData)
 // // router.post('/login', UserController.loginData)
 
 // //get data

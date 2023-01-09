@@ -220,7 +220,7 @@ const UserController = {
     }
   },
 
-  /* login controller */
+   /* login controller */
   loginC: async (req, res) => {
     try {
       const { email, pass } = req.body;
@@ -235,7 +235,6 @@ const UserController = {
           value: { email, pass },
         });
       }
-
       const user = await UserModels.mailCatchM(email);
       const userName = user[0].first_name;
       const userMail = user[0].email;
@@ -300,6 +299,7 @@ const UserController = {
       // console.log(errors)
     }
   },
+
   /* ====== New register  Controller  ====== */
 
   registerC: async (req, res) => {
