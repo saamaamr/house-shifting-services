@@ -31,7 +31,7 @@ const UserModels = {
     const [rows] = await dbConnect.promise().execute(sql);
     return rows;
   },
-  //test
+  
   /* ====== Register Model ===== */
   insertRegisterM: async (firstName, lastName, email, phone, house, road, division, zila, upazila,  role, pass) => {
     try {
