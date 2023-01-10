@@ -48,7 +48,6 @@ router.get(
   router.get(
     '/profile',
     decorateHtmlResponse('Profile'),
-    requireAuth,
     UserController.profile,
   );
   router.get(

@@ -20,11 +20,17 @@ const UserModels = {
     return rows;
   },
 
-  // getUser: async () => {
-  //   const sql = `SELECT * FROM users `;
-  //   const [rows] = await dbConnect.promise().execute(sql);
-  //   return rows;
-  // },
+  getUser: async (email) => {
+    const sql = `SELECT * FROM users  Where email="${email}"`;
+    const [rows] = await dbConnect.promise().execute(sql);
+    return rows;
+  },
+
+  getallUser: async () => {
+    const sql = `SELECT * FROM users `;
+    const [rows] = await dbConnect.promise().execute(sql);
+    return rows;
+  },
 
   getaService: async () => {
     const sql = `SELECT * ,DATE_FORMAT(date,'%d/%c/%Y')as fdate FROM aservice`;

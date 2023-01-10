@@ -22,6 +22,11 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }))
+
+if (typeof localStorage === "undefined" || localStorage === null) {
+  let LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
 //??-->
 
 app.use(express.static(`${__dirname}/public`));

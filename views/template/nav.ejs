@@ -44,7 +44,7 @@
                 <a href="" class="call-link">
                   <i class="fa fa-phone" aria-hidden="true"></i>
                   <span>
-                    Call : +880 16019181420
+                    Call : +880 1601XXXXXXX
                   </span>
                 </a>
               </div>
@@ -84,13 +84,30 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="/login" value="user" id="user">User Login</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/login" value="worker" id="worker">Worker
-                        Login</a>
-                    </li>
+                    <% console.log("test to...",uId) %>
+
+                      <% if(uId) { %>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/profile">
+                            <%= userData[0].first_name %>
+                              <%= userData[0].last_name %>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                        <% } else{ %>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/login" value="user" id="user">User Login</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/login" value="worker" id="worker">Worker
+                              Login</a>
+                          </li>
+                          <% } %>
                     <form class="form-inline justify-content-center">
                       <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                         <i class="fa fa-search" aria-hidden="true"></i>

@@ -36,22 +36,37 @@ async function sendMail(toMail, subject, textMessage, htmlMessage) {
 const UserController = {
 
   getHome: async (req, res) => {
-    res.render('pages/home')
+    const allService = await UserModels.getaService()
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId)    
+    res.render('pages/home', { uId, allService,userData })
   },
   getAbout: async (req, res) => {
-    res.render('pages/about')
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId)
+// console.log({ userData })
+{ uId, userData }
+    res.render('pages/about',{ uId, userData })
   },
   getContact: async (req, res) => {
-    res.render('pages/contact')
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId)
+
+    res.render('pages/contact',{ uId, userData })
   },
   getOffer: async (req, res) => {
-    res.render('pages/offer')
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId)
+
+    res.render('pages/offer',{ uId, userData })
   },
   getServices: async (req, res) => {
-    // console.log("work.......services")
+  
     const allService = await UserModels.getaService()
-    // console.log({allService})
-    res.render('pages/services', { allService })
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId)
+{ uId, userData }
+    res.render('pages/services', { allService, uId, userData })
   },
   // Admin Related
   getAdmin: async (req, res) => {
@@ -61,154 +76,27 @@ const UserController = {
     res.render('pages/booking')
   },
   getUser: async (req, res) => {
-    res.render('pages/user',)
+    const uId=localStorage.getItem("userMail");
+    const user = await UserModels.getUser(uId)
+    res.render('pages/user',{uId,user})
   },
   getWorker: async (req, res) => {
     res.render('pages/worker')
   },
-  // getSignupForm: async (req, res) => {
-  //   res.render('pages/signup')
-  // },
-  // getLoginForm: async (req, res) => {
-  //   res.render('pages/login')
-  // },
-  // signupData: async (req, res) => {
-  //   try {
-  //     const {
-  //       firstName, lastName, email, phone, house, road, division, upazila, zila, role, pass,
-  //     } = req.body;
-  //     const hash = await bcrypt.hash(pass, 10);
-  //     const signup = await UserModels.signup(firstName, lastName, email, phone, house, road, division, upazila, zila, role, hash);
 
-  //     if (signup.errno) {
-  //       res.send('Something went wrong')
-  //     } else {
-  //       res.redirect('/login')
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //     res.send('Wrong')
-  //   }
-  // },
 
   getServiceData: async (req, res) => {
     const allService = await UserModels.getaService()
-    // console.log("work.......")
-    // console.log({allService})
     res.render('pages/service', { allService })
   },
 
-  // getloginForm: async (req, res) => {
-  //   res.render('pages/login', { title: 'Express', session: req.session })
-  // },
-
-  // loginData: async (req, res) => {
-  //   try {
-  //     const {
-  //       email, role, pass,
-  //     } = req.body;
-
-  //     if (email && pass && role) {
-  //       const login = await UserModels.login(email);
-  //       if (login.length > 0) {
-  //         for (let i = 0; i < login.length; i++) {
-  //           const validPass = await bcrypt.compare(pass, login[i].pass);
-  //           if (validPass && login[i].role == role) {
-  //             req.session.u_id = login[i].u_id;
-  //             req.session.first_name = login[i].first_name;
-  //             req.session.last_name = login[i].last_name;
-  //             req.session.role = login[i].role;
-  //             console.log("test", login)
-  //             res.redirect('/login');
-  //           }
-  //           else {
-  //             res.send('Incorrect Password or Role');
-  //           }
-  //         }
-  //       }
-  //       else {
-  //         res.send('Incorrect Email Address');
-  //       }
-  //       res.end();
-  //     }
-  //     else {
-  //       res.send('Please enter your email, password and role, If you have no account please sign up.')
-  //       res.end();
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //     res.send('Wrong')
-  //   }
-  // },
-
-  // // Loging Controler 
-  //   loginControler: async (req, res) => {
-  //     console.log("ok...")
-  //     const { email, pass } = req.body;
-  //     console.log(email, pass)
-  //     const errors = validationResult(req).formatWith((error) => error.msg);
-  //     if (!errors.isEmpty()) {
-  //       return res.render('pages/login', {
-  //         error: errors.mapped(),
-  //         value: { email, pass },
-  //       })
-  //     } try {
-  //       const getEmail = await UserModels.getLoginEmail(email);
-  //       console.log(getEmail)
-  //       const userFirstName = getEmail[0].first_name;
-  //       const userLastName = getEmail[0].last_name;
-  //       const userEmail = getEmail[0].email;
-  //       const userPassword = getEmail[0].pass;
-  //       if (getEmail) {
-  //         const isValidPass = await bcrypt.compare(pass, userPassword);
-  //         if (isValidPass) {
-  //           const token = jwt.sign(
-  //             {
-  //               userFirstName, userLastName,userEmail,
-  //             },
-  //             process.env.JWT_SECRET,
-  //             { expiresIn: maxAge },
-  //           )
-  //           res.cookie('jwt', token, { maxAge })
-  //           res.redirect('/login');
-  //         }else{
-  //           res.render('pages/login',{auth: true})
-  //         }
-  //       }else{
-  //         res.render('pages/login',{auth: true})
-  //       }
-  //     } catch (err) {
-  //       res.render('pages/login',{
-  //         auth: true,
-  //         data :{
-  //           email: req.body.email,
-  //         },
-  //         errors: {
-  //           common: {
-  //             msg: err.message,
-  //           }
-  //         }
-  //       })
-  //     }
-  //   },
-
-  // userData: async (req, res) => {
-  //   res.render('pages/home')
-  // },
-
-
-  // getlogout: (req, res) => {
-  //   req.session.destroy();
-  //   res.redirect('/')
-  // },
-
+  
   serviceData: async (req, res) => {
     try {
       const {
         stitle, items, details, price, date, status
       } = req.body;
       const servie = await UserModels.servie(stitle, items, details, price, date, status);
-
       if (servie.errno) {
         res.send('Something went wrong')
       } else {
@@ -249,13 +137,9 @@ const UserController = {
         const isValidPassword = await bcrypt.compare(pass, password);
         if (isValidPassword) {
           console.log("pass ok", isValidPassword)
-// const umBtn = document.getElementById('lgnBtn')
-// console.log(document.getElementById('lgnBtn'))
-// umBtn.addEventListener('click',(e)=>{  
-//   if(umBtn.attributes.value.value=="userMail"){
-//       localStorage.setItem('userMail',`${userMail}`)
-//   }
-// })
+
+          localStorage.setItem('userMail',`${userMail}`)
+
           const token = jwt.sign(
             {
               name: userName,
@@ -268,8 +152,12 @@ const UserController = {
           if (token !== null) {
             res.cookie(process.env.COOKIE_NAME, token, { maxAge, httpOnly: true, signed: true });
             console.log("ok token", user)
+            const allService = await UserModels.getaService()
+            const uId=localStorage.getItem("userMail");
+            const userData = await UserModels.getUser(uId)
+            console.log({ userData })
             
-            res.render('pages/home', { user })
+            res.render('pages/home', { uId, allService,userData })
             // res.render('pages/login',{ title: 'Express', session: req.session })
 
             
@@ -312,7 +200,10 @@ const UserController = {
   },
   /* ====== Profile Controller  ====== */
   profile: async (req, res) => {
-    res.render('pages/profile');
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId)
+
+    res.render('pages/userprofile',{ uId, userData });
   },
 
   /* ====== Register controller ====== */
@@ -403,7 +294,8 @@ const UserController = {
   /* ====== Logout Controller  ====== */
   logout: async (req, res) => {
     res.cookie(process.env.COOKIE_NAME, '', { maxAge, httpOnly: true, signed: true });
-    res.redirect('/login');
+    localStorage.removeItem('userMail');
+    res.redirect('/');
   },
   accountVerify: async (req, res) => {
     const userId = req.params.id

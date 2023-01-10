@@ -508,7 +508,7 @@ a:focus {
           align-items: center;
   margin-top: 55px;
   border-radius: 5px;
-  background-color: #1f4172;
+  background-color: #1453ab;
   padding: 65px 0 45px 0;
 }
 
@@ -585,7 +585,7 @@ a:focus {
 }
 
 .service_section .box .detail-box a:hover {
-  color: #1f4172;
+  color: #1453ab;
 }
 
 .service_section .box:hover .img-box::before {
@@ -620,7 +620,7 @@ a:focus {
 }
 
 .call_section {
-  background: #1f4172;
+  background: #1453ab;
   color: #ffffff;
   padding: 65px 0;
 }
@@ -651,18 +651,18 @@ a:focus {
 .call_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #1f4172;
+  background-color: #1453ab;
   color: #ffffff;
   border-radius: 0px;
   -webkit-transition: all .3s;
   transition: all .3s;
-  border: 1px solid #1f4172;
+  border: 1px solid #1453ab;
   margin-top: 15px;
 }
 
 .call_section .detail-box a:hover {
   background-color: transparent;
-  color: #1f4172;
+  color: #1453ab;
 }
 
 .faq_section {
@@ -698,7 +698,7 @@ a:focus {
 }
 
 .faq_section #faqAccordion .card-header {
-  background-color: #1f4172;
+  background-color: #1453ab;
   border: none;
 }
 
@@ -953,28 +953,28 @@ a:focus {
 .contact_section .btn-box .map_btn {
   display: inline-block;
   padding: 10px 0;
-  background-color: #1f4172;
+  background-color: #1453ab;
   color: #ffffff;
   border-radius: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
-  border: 1px solid #1f4172;
+  border: 1px solid #1453ab;
 }
 
 .contact_section .btn-box .map_btn:hover {
   background-color: transparent;
-  color: #1f4172;
+  color: #1453ab;
 }
 
 .contact_section .add_btn {
   display: inline-block;
   padding: 10px 0;
-  background-color: #1f4172;
+  background-color: #1453ab;
   color: #ffffff;
   border-radius: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
-  border: 1px solid #1f4172;
+  border: 1px solid #1453ab;
   /* margin: 5px; */
   width: 100%;
   height: 100%;
@@ -984,7 +984,7 @@ a:focus {
 
 .contact_section  .add_btn:hover {
   background-color: transparent;
-  color: #1f4172;
+  color: #1453ab;
 }
 
 .contact_section .map_container .map {
@@ -997,7 +997,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #1f4172;
+  background-color: #1453ab;
   padding-top: 75px;
   text-align: center;
   color: #fff;
@@ -1042,7 +1042,7 @@ a:focus {
   border-radius: 100%;
   text-align: center;
   line-height: 65px;
-  color: #1f4172;
+  color: #1453ab;
   -webkit-transition: all .3s;
   transition: all .3s;
   position: relative;
