@@ -51,6 +51,18 @@ body {
 .heading_container h2 span {
   color: #87CEEB;
 }
+.profile_container p {
+  color: #000000;
+  position: relative;
+  font-weight: bold;
+
+}
+ .profile_container p span {
+  color: #87CEEB;
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 .heading_container.heading_center {
   -webkit-box-align: center;
@@ -72,6 +84,7 @@ a:focus {
 a:hover,
 a:focus {
   color: initial;
+  /* color: white; */
 }
 
 .btn,
@@ -482,9 +495,27 @@ a:focus {
   margin-top: 15px;
 }
 
+
+
 .about_section .detail-box a:hover {
   background-color: transparent;
   color: #87CEEB;
+}
+
+.about_section .detail-box button {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #074e6b;
+  color: #ffffff;
+  border-radius: 0px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: 1px solid #074e6b;
+  margin-top: 15px;
+}
+.about_section .detail-box button:hover {
+  background-color: transparent;
+  color: #074e6b;
 }
 
 .service_section {
@@ -568,7 +599,7 @@ a:focus {
 
 }
 .service_section .box .detail-box p {
-  height: 200px;
+  height: 180px;
 }
 .service_section .box .detail-box h5 {
   font-weight: bold;
@@ -989,6 +1020,21 @@ a:focus {
 
 .contact_section .map_container .map {
   height: 285px;
+}
+
+
+ a .booked_btn {  
+  padding: 10px 0;
+  background-color: #1453ab;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: 1px solid #1453ab;
+
+
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .contact_section .map_container .map #googleMap {

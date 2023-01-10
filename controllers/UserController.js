@@ -75,6 +75,9 @@ const UserController = {
   getBooking: async (req, res) => {
     res.render('pages/booking')
   },
+  getBooked: async (req, res) => {
+    res.render('pages/booked')
+  },
   getUser: async (req, res) => {
     const uId=localStorage.getItem("userMail");
     const user = await UserModels.getUser(uId)
@@ -191,12 +194,18 @@ const UserController = {
   /* ====== New register  Controller  ====== */
 
   registerC: async (req, res) => {
-    res.render('pages/signup');
+    const uId=localStorage.getItem("userMail");
+    const user = await UserModels.getUser(uId)
+
+    res.render('pages/signup',{uId,user});
   },
   /* ====== New login Controller  ====== */
 
   newlogin: async (req, res) => {
-    res.render('pages/login');
+    const uId=localStorage.getItem("userMail");
+    const user = await UserModels.getUser(uId)
+
+    res.render('pages/login',{uId,user});
   },
   /* ====== Profile Controller  ====== */
   profile: async (req, res) => {
@@ -210,8 +219,12 @@ const UserController = {
   insertRegisterC: async (req, res) => {
     const { firstName, lastName, email, phone, house, road, division, zila, upazila, role, pass } = req.body;
     const errors = validationResult(req).formatWith((error) => error.msg);
+    const uId=localStorage.getItem("userMail");
+    const user = await UserModels.getUser(uId)
     console.log("work.......", errors)
     if (!errors.isEmpty()) {
+
+    res.render('pages/signup',{uId,user});
       return res.render('pages/signup', {
         error: errors.mapped(),
         value: { firstName, lastName, email, phone, house, road, division, zila, upazila, role, pass },

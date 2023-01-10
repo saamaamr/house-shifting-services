@@ -21,25 +21,37 @@
                   <div class="img-box">
                     <img src="images/s1.png" alt="">
                   </div>
-                      <div class="detail-box">
+                  <div class="detail-box">
                     <h5>
                       <%= service.stitle%>
                     </h5>
   
-                    <% let fullString = service.items + " also " + service.details %>
-                    <% let subString = fullString.substr(0, 150); %>
-                    <p>
-                      
-                      <%= fullString %>
-                    </p>
-                    <a href="">
-                      Read More
-                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <h6>
-                     Price <%= service.price%> BDT
-                    </h6>
+                    <% let fullString=service.items + " also " + service.details %>
+                      <% let subString=fullString.substr(0, 150); %>
+                        <p>
+  
+                          <%= fullString %>
+                        </p>
+                        <% if(uId) { %>
+                        <h5>
+                          Price <%= service.price%> BDT
+                        </h5>
                   </div>
+                  <div class="btn-box">
+                    <a href="#">
+                      Book Now
+                    </a>
+                  </div>
+                  <% } else{ %>
+                  </div>
+                    <div class="btn-box">
+                      <a href="#">
+                        Book Service
+                      </a>
+                    </div>
+  
+                    <% } %>
+  
                 </div>
               </div>
               <% }) %>

@@ -1,7 +1,46 @@
 <%- include ('../template/header') %>
-<%- include ('../template/nav') -%>
+  <%- include ('../template/nav') -%>
+    <!-- about section -->
 
+    <section class="about_section layout_padding">
+      <div class="container  ">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="images/s3.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  <%= userData[0].first_name %> <span>
+                      <%= userData[0].last_name %>
+                    </span>
+                </h2>
+              </div>
+              <div class="profile_container">
+                <p>
+                  <span>email: </span>
+                  <%= userData[0].email %>
+                </p>
+                <p>
+                  <span>Address: </span>
+                  <%= userData[0].house %>
+                </p>
+              </div>
+              <a href="/booked">
+                Booked Service
+              </a>
+                <button>
+                  Update Profile
+                </button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-dfg
-
-<%- include("../template/footer"); -%>
+    <!-- end about section -->
+    <%- include("../template/footer"); -%>

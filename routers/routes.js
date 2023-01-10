@@ -30,6 +30,7 @@ router.get('/services', UserController.getServices)
 
 router.get('/admin', UserController.getAdmin)
 router.get('/booking', UserController.getBooking)
+router.get('/booked', UserController.getBooked)
 router.get('/user', UserController.getUser)
 router.get('/worker', UserController.getWorker)
 router.get('/service', UserController.getServiceData)

@@ -82,9 +82,7 @@
                     <% console.log("test to...",uId) %>
 
                       <% if(uId) { %>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/contact">Contact Us</a>
-                        </li>
+          
                         <li class="nav-item">
                           <a class="nav-link" href="/profile">
                             <%= userData[0].first_name %>
@@ -207,6 +205,10 @@
 
   <!-- about section -->
 
+<br>
+<br>
+<br>
+<br>
   <section class="about_section layout_padding">
     <div class="container  ">
       <div class="row">
@@ -228,9 +230,7 @@
               are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
               the middle of text. All
             </p>
-            <a href="">
-              Read More
-            </a>
+           
           </div>
         </div>
       </div>
@@ -270,14 +270,26 @@
 
                         <%= fullString %>
                       </p>
-                      <a href="">
-                        Read More
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                      </a>
-                      <h6>
+                      <% if(uId) { %>
+                      <h5>
                         Price <%= service.price%> BDT
-                      </h6>
+                      </h5>
                 </div>
+                <div class="btn-box">
+                  <a href="#">
+                    Book Now
+                  </a>
+                </div>
+                <% } else{ %>
+                </div>
+                  <div class="btn-box">
+                    <a href="#">
+                      Book Service
+                    </a>
+                  </div>
+
+                  <% } %>
+
               </div>
             </div>
             <% }) %>
@@ -342,9 +354,7 @@
               suscipit fugit architecto debitis? Laudantium, sunt dolorem eaque consequatur placeat dolor quod iure
               aliquid praesentium velit voluptatem recusandae.
             </p>
-            <a href="">
-              Read More
-            </a>
+            
           </div>
         </div>
         <div class="col-md-6">
@@ -466,9 +476,7 @@
                 Recusandae dolor sit amet consectetu entes adipisicing elit velit error repellat assumenda suscipit
                 illum
               </p>
-              <a href="">
-                Read More
-              </a>
+              
             </div>
           </div>
         </div>
@@ -485,9 +493,7 @@
                 Recusandae dolor sit amet consectetu entes adipisicing elit velit error repellat assumenda suscipit
                 illum
               </p>
-              <a href="">
-                Read More
-              </a>
+              
             </div>
           </div>
         </div>
