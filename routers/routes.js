@@ -19,6 +19,7 @@ router.post('/add-service', UserController.serviceData)
 router.get('/', UserController.getHome)
 // router.get('/login', UserController.getloginForm)
 // router.get('/signup', UserController.getSignupForm)
+router.get('/demosignup', UserController.registerCdemo)
 router.get('/home', UserController.getHome)
 
 router.get('/about', UserController.getAbout)

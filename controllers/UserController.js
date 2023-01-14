@@ -45,7 +45,6 @@ const UserController = {
     const uId=localStorage.getItem("userMail");
     const userData = await UserModels.getUser(uId)
 // console.log({ userData })
-{ uId, userData }
     res.render('pages/about',{ uId, userData })
   },
   getContact: async (req, res) => {
@@ -64,8 +63,7 @@ const UserController = {
   
     const allService = await UserModels.getaService()
     const uId=localStorage.getItem("userMail");
-    const userData = await UserModels.getUser(uId)
-{ uId, userData }
+    const userData = await UserModels.getUser(uId);
     res.render('pages/services', { allService, uId, userData })
   },
   // Admin Related
@@ -76,12 +74,16 @@ const UserController = {
     res.render('pages/booking')
   },
   getBooked: async (req, res) => {
-    res.render('pages/booked')
+    const uId=localStorage.getItem("userMail");
+    const userData = await UserModels.getUser(uId);
+    const allService = await UserModels.getaService()
+   
+    res.render('pages/booked',{uId,userData,allService})
   },
   getUser: async (req, res) => {
     const uId=localStorage.getItem("userMail");
-    const user = await UserModels.getUser(uId)
-    res.render('pages/user',{uId,user})
+    const userData = await UserModels.getUser(uId)
+    res.render('pages/user',{uId,userData})
   },
   getWorker: async (req, res) => {
     res.render('pages/worker')
@@ -198,6 +200,13 @@ const UserController = {
     const user = await UserModels.getUser(uId)
 
     res.render('pages/signup',{uId,user});
+  },
+  // delet afer 
+  registerCdemo: async (req, res) => {
+    const uId=localStorage.getItem("userMail");
+    const user = await UserModels.getUser(uId)
+
+    res.render('pages/signupdemo',{uId,user});
   },
   /* ====== New login Controller  ====== */
 

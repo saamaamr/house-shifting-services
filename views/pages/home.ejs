@@ -78,11 +78,11 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
-                    
+
                     <% console.log("test to...",uId) %>
 
                       <% if(uId) { %>
-          
+
                         <li class="nav-item">
                           <a class="nav-link" href="/profile">
                             <%= userData[0].first_name %>
@@ -101,7 +101,7 @@
                               Login</a>
                           </li>
                           <% } %>
-                            
+
                   </ul>
                   <!-- Default dropstart button -->
                 </div>
@@ -205,10 +205,10 @@
 
   <!-- about section -->
 
-<br>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
+  <br>
   <section class="about_section layout_padding">
     <div class="container  ">
       <div class="row">
@@ -221,16 +221,16 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                We Are <span>Move Home</span>
+                We Are <span>Shifting House</span>
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              Welcome to our house shifting service. We understand that moving can be a stressful and
+              overwhelming experience, but we're here to make it as smooth and hassle-free as possible. Our team of
+              experienced and skilled movers is dedicated to providing you with the best possible service at a
+              competitive price.
             </p>
-           
+
           </div>
         </div>
       </div>
@@ -271,9 +271,9 @@
                         <%= fullString %>
                       </p>
                       <% if(uId) { %>
-                      <h5>
-                        Price <%= service.price%> BDT
-                      </h5>
+                        <h5>
+                          Price <%= service.price%> BDT
+                        </h5>
                 </div>
                 <div class="btn-box">
                   <a href="#" value="<%= service.id %>">
@@ -281,25 +281,25 @@
                   </a>
                 </div>
                 <% } else{ %>
-                </div>
-                  <div class="btn-box">
-                    <a href="#">
-                      Book Service
-                    </a>
-                  </div>
-
-                  <% } %>
-
               </div>
+              <div class="btn-box">
+                <a href="#">
+                  Book Service
+                </a>
+              </div>
+
+              <% } %>
+
             </div>
-            <% }) %>
         </div>
-        <div class="btn-box">
-          <a href="">
-            View More
-          </a>
-        </div>
+        <% }) %>
       </div>
+      <div class="btn-box">
+        <a href="">
+          View More
+        </a>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -354,7 +354,7 @@
               suscipit fugit architecto debitis? Laudantium, sunt dolorem eaque consequatur placeat dolor quod iure
               aliquid praesentium velit voluptatem recusandae.
             </p>
-            
+
           </div>
         </div>
         <div class="col-md-6">
@@ -470,13 +470,14 @@
             </div>
             <div class="detail-box">
               <h5>
-                Velit tempora molestias quae
+                Winter Special
               </h5>
               <p>
-                Recusandae dolor sit amet consectetu entes adipisicing elit velit error repellat assumenda suscipit
-                illum
+                Book your move with us before the end of January and receive 10% off your total bill.Free packing and
+                unpacking service with every move! Move with ease and without any additional cost. Offer valid for that
+                time only.
               </p>
-              
+
             </div>
           </div>
         </div>
@@ -487,13 +488,13 @@
             </div>
             <div class="detail-box">
               <h5>
-                Repudiandae voluptatum quaerat
+                Offer for PCIU students moving for study
               </h5>
               <p>
-                Recusandae dolor sit amet consectetu entes adipisicing elit velit error repellat assumenda suscipit
-                illum
+                15% off for all students with valid ID. Move with ease and save on your student budget. Show valid
+                student ID at the time of checkout to avail the offer. Use code PCIU10 at the time of checkout.
               </p>
-              
+
             </div>
           </div>
         </div>
@@ -551,24 +552,24 @@
 
   <% if(uId) { %>
     <script src="/js/custom.js"></script>
-    <% } else{ %>     
+    <% } else{ %>
       <script src="/js/home.js"></script>
       <% } %>
 
 
 
-  <%- include ('../template/footer') %>
+        <%- include ('../template/footer') %>
 
 
-    <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
+          <!-- jQery -->
+          <script src="js/jquery-3.4.1.min.js"></script>
+          <!-- popper js -->
+          <script src="js/popper.min.js"></script>
+          <!-- bootstrap js -->
+          <script src="js/bootstrap.js"></script>
+          <!-- custom js -->
+          <script src="js/custom.js"></script>
 
-    </body>
+          </body>
 
-    </html>
+          </html>
