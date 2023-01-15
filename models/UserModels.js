@@ -9,7 +9,7 @@ const UserModels = {
   //   return rows;
   // },
   servie: async (stitle, items, details, price, date, status) => {
-    const sql = 'INSERT INTO `aservice`(`stitle`, `items`, `details`, `price`, `date`, `status`) VALUES(?,?,?,?,?,?)';
+    const sql = 'INSERT INTO `org_ervice`(`stitle`, `items`, `details`, `price`, `date`, `status`) VALUES(?,?,?,?,?,?)';
     const values = [stitle, items, details, price, date, status]
     const [rows] = await dbConnect.promise().execute(sql, values);
     return rows;
@@ -33,7 +33,7 @@ const UserModels = {
   },
 
   getaService: async () => {
-    const sql = `SELECT * ,DATE_FORMAT(date,'%d/%c/%Y')as fdate FROM aservice`;
+    const sql = `SELECT * ,DATE_FORMAT(date,'%d/%c/%Y')as fdate FROM org_service`;
     const [rows] = await dbConnect.promise().execute(sql);
     return rows;
   },
