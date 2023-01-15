@@ -34,6 +34,7 @@ router.get('/booking', UserController.getBooking)
 router.get('/booked', UserController.getBooked)
 router.get('/user', UserController.getUser)
 router.get('/worker', UserController.getWorker)
+router.get('/workers', UserController.getWorkerDesh)
 router.get('/service', UserController.getServiceData)
 
 // router.get('/service', UserController.getService)

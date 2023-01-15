@@ -9,7 +9,7 @@ const UserModels = {
   //   return rows;
   // },
   servie: async (stitle, items, details, price, date, status) => {
-    const sql = 'INSERT INTO `org_ervice`(`stitle`, `items`, `details`, `price`, `date`, `status`) VALUES(?,?,?,?,?,?)';
+    const sql = 'INSERT INTO `org_service`(`stitle`, `items`, `details`, `price`, `date`, `status`) VALUES(?,?,?,?,?,?)';
     const values = [stitle, items, details, price, date, status]
     const [rows] = await dbConnect.promise().execute(sql, values);
     return rows;

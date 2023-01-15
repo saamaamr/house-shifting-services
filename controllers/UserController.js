@@ -85,8 +85,13 @@ const UserController = {
     const userData = await UserModels.getUser(uId)
     res.render('pages/user',{uId,userData})
   },
+
   getWorker: async (req, res) => {
     res.render('pages/worker')
+  },
+
+  getWorkerDesh: async (req, res) => {
+    res.render('pages/workerdesh')
   },
 
 
