@@ -44,7 +44,7 @@
 
   <section class="service_section layout_padding-bottom">
     <div class="service_container">
-      <div class="container ">
+      <div class="container">
         <div class="heading_container heading_center">
           <h2>
             Our <span>Services</span>
@@ -195,6 +195,7 @@
   </section>
 
   <!-- end Offer section -->
+  <% if(!uId) { %>
 
   <!-- contact section -->
   <section class="contact_section layout_padding">
@@ -241,6 +242,10 @@
     </div>
   </section>
   <!-- end contact section -->
+  <% } else{ %>
+<br>
+  <% } %>
+
 
   <% if(uId) { %>
     <script src="/js/custom.js"></script>

@@ -318,6 +318,7 @@ const UserController = {
       return res.render('pages/signup', { registerFail: true });
     }
   },
+  
   /* ====== Logout Controller  ====== */
   logout: async (req, res) => {
     res.cookie(process.env.COOKIE_NAME, '', { maxAge, httpOnly: true, signed: true });

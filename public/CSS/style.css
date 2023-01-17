@@ -783,6 +783,7 @@ a:focus {
 }
 
 .news_section .heading_container {
+  margin-top: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
