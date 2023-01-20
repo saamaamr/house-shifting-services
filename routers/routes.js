@@ -16,39 +16,29 @@ const {
 const { singupValidator, loginValidator } = require('../middleware/validator/userValidator');
 const decorateHtmlResponse = require('../middleware/decorateHtmlResponse');
 
-//post data
-
-router.post('/add-service', UserController.serviceData)
 
 
-// //get data
+
+
+
+
+
+
+/* ======= Get Routes ======= */
 router.get('/', UserController.getHome)
-router.get('/demosignup', UserController.registerCdemo)
 router.get('/home', UserController.getHome)
-
 router.get('/about', UserController.getAbout)
 router.get('/contact', UserController.getContact)
 router.get('/offer', UserController.getOffer)
 router.get('/services', UserController.getServices)
-
-
 router.get('/admin', UserController.getAdmin)
 router.get('/booking', UserController.getBooking)
 router.get('/bookingservice', UserController.getBookingC)
-
 router.get('/booked', UserController.getBooked)
 router.get('/user', UserController.getUser)
 router.get('/worker', UserController.getWorker)
 router.get('/workers', UserController.getWorkerDesh)
 router.get('/service', UserController.getServiceData)
-router.post('/book-service', UserController.bookData)
-
-
-// router.get('/service', UserController.getService)
-
-
-// test
-/* ======= Get Routes ======= */
 router.get(
   '/login',
   decorateHtmlResponse('Home'), redirectLoggedIn,
@@ -83,17 +73,24 @@ router.get('/logout', UserController.logout);
 router.get('/workerlogout', UserController.WorkerLogout);
 router.get('/adminlogout', UserController.adminLogout);
 
-
-router.post('/alogin', UserController.adminLoginData)
+router.get('/verify-account/:id', UserController.accountVerify)
+router.get('/verify-worker-account/:id', UserController.workerAccountVerify)
+router.get('/hold-worker-account/:id', UserController.workerAccountHold)
+router.get('/verify-booking/:id', UserController.bookingVerify)
+router.get('/hold-booking/:id', UserController.bookingHold)
 
 /* ======= Post routes ======== */
+router.post('/alogin', UserController.adminLoginData)
+router.post('/book-service', UserController.bookData)
+router.post('/add-service', UserController.serviceData)
+router.post('/login', decorateHtmlResponse('Login'), UserController.loginC)
+router.post('/workerlogin',  UserController.workerloginC)
 router.post(
   '/signup', upload.fields([{ name: 'propic' }]),
   decorateHtmlResponse('SignUp'),
   singupValidator,
   UserController.insertRegisterC,
 );
-
 router.post(
   '/workersignup', upload.fields([{ name: 'propic' },
    { name: 'nid1' }, 
@@ -101,23 +98,9 @@ router.post(
   UserController.insertWorkerRegisterC,
 );
 
-router.post('/login', decorateHtmlResponse('Login'), UserController.loginC)
-router.post('/workerlogin',  UserController.workerloginC)
-
-router.get('/verify-account/:id', UserController.accountVerify)
-router.get('/verify-worker-account/:id', UserController.workerAccountVerify)
-router.get('/hold-worker-account/:id', UserController.workerAccountHold)
-router.get('/verify-booking/:id', UserController.bookingVerify)
-router.get('/hold-booking/:id', UserController.bookingHold)
-
 router.post(
   '/bookingservice', upload.fields([{ name: 'paymentProof' }]),
   UserController.insertBooking,
 );
-
-
-// 
-
-
 
 module.exports = router;
