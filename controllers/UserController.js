@@ -89,7 +89,7 @@ const UserController = {
     const serData = await UserModels.getService(sId);
 
     console.log(sId, userData, serData)
-    res.render('pages/bookingservice', { userData, serData })
+    res.render('pages/bookingservice', { uId,userData, serData })
   },
   getBooked: async (req, res) => {
     const uId = localStorage.getItem("userMail");
