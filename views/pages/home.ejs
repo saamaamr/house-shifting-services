@@ -54,49 +54,124 @@
           </p>
         </div>
         <div class="row">
-          <% allService.map(service=>{ %>
-            <div class="col-sm-6 col-lg-4 mx-auto ">
-              <div class="box">
-                <div class="img-box">
-                  <img src="images/s1.png" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    <%= service.stitle%>
-                  </h5>
-
-                  <% let fullString=service.items + " also " + service.details %>
-                    <% let subString=fullString.substr(0, 150); %>
-                      <p>
-
-                        <%= fullString %>
-                      </p>
-                      <% if(uId) { %>
-                        <h5>
-                          Price <%= service.price%> BDT
-                        </h5>
-                </div>
-                <div class="btn-box">
-                  <a href="#" value="<%= service.id %>">
-                    Book Now
-                  </a>
-                </div>
-                <% } else{ %>
+          <div class="col-sm-6 col-lg-4 mx-auto ">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/s1.png" alt="">
               </div>
+              <div class="detail-box">
+                <h5>
+                  <%= allService[0].stitle%>
+                </h5>
+                    <p>
+
+                      <%= allService[0].items + " also " + allService[0].details %>
+                    </p>
+                    <% if(uId) { %>
+                      <h5>
+                        Price <%= allService[0].price%> BDT
+                      </h5>
+              </div>
+              <form action="/book-service" method="post">
               <div class="btn-box">
-                <a href="#">
-                  Book Service
-                </a>
-              </div>
-
-              <% } %>
-
+                <input type="hidden" name="service_id" value="<%= allService[0].ser_id %>">
+                <button type="submit">
+                  Book Now
+                </button>                
+                </div>
+              </form>              
+              <% } else{ %>
             </div>
+            <div class="btn-box">
+              <a href="/login">
+                Book Service
+              </a>
+            </div>
+
+            <% } %>
+
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mx-auto ">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/s1.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              <%= allService[1].stitle%>
+            </h5>
+                <p>
+
+                  <%= allService[1].items + " also " + allService[1].details %>
+                </p>
+                <% if(uId) { %>
+                  <h5>
+                    Price <%= allService[1].price%> BDT
+                  </h5>
+          </div>
+          <form action="/book-service" method="post">
+          <div class="btn-box">
+            <input type="hidden" name="service_id" value="<%= allService[1].ser_id %>">
+            <button type="submit">
+              Book Now
+            </button>                
+            </div>
+          </form>              
+          <% } else{ %>
         </div>
-        <% }) %>
+        <div class="btn-box">
+          <a href="/login">
+            Book Service
+          </a>
+        </div>
+
+        <% } %>
+
+      </div>
+  </div>
+  <div class="col-sm-6 col-lg-4 mx-auto ">
+    <div class="box">
+      <div class="img-box">
+        <img src="images/s1.png" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <%= allService[2].stitle%>
+        </h5>
+            <p>
+
+              <%= allService[2].items + " also " + allService[2].details %>
+            </p>
+            <% if(uId) { %>
+              <h5>
+                Price <%= allService[2].price%> BDT
+              </h5>
+      </div>
+      <form action="/book-service" method="post">
+      <div class="btn-box">
+        <input type="hidden" name="service_id" value="<%= allService[2].ser_id %>">
+        <button type="submit">
+          Book Now
+        </button>                
+        </div>
+      </form>              
+      <% } else{ %>
+    </div>
+    <div class="btn-box">
+      <a href="/login">
+        Book Service
+      </a>
+    </div>
+
+    <% } %>
+
+  </div>
+</div>
+
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="/services">
           View More
         </a>
       </div>

@@ -1,4 +1,41 @@
-<%- include ('../template/aheader') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/eos-icons/dist/css/eos-icons.css" rel="stylesheet" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/astyle.css" />
+  <title>Worker</title>
+</head>
+<body>
+    
+<section class="header">
+        <div class="logo">
+            <i class="ri-menu-line icon icon-0 menu"></i>
+            <h2>House<span>Shifting</span></h2>
+        </div>
+        <div class="search--notification--profile">
+            <div class="search">
+                <input type="text" placeholder="Search Service..">
+                <button><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+          
+                <div class="picon chat">
+                    <%=workerData[0].first_name%> <%=workerData[0].last_name%>
+                </div>
+                <div class="picon profile">
+                    <img src="/uploads/<%=workerData[0].propic%>" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section class="main">
         <div class="sidebar">
             <ul class="sidebar--items">
@@ -17,14 +54,9 @@
                 </li>
             </ul>
             <ul class="sidebar--bottom-items">
+            
                 <li>
-                    <a href="#">
-                        <span class="icon icon-7"><i class="ri-settings-3-line"></i></span>
-                        <span class="sidebar--item">Settings</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="/workerlogout">
                         <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
                         <span class="sidebar--item">Logout</span>
                     </a>
@@ -34,104 +66,57 @@
         <div class="main--content">
             <div class="recent--worker">
                 <div class="title">
-                    <h2 class="section--title">Offer Booking List</h2>
+                    <h2 class="section--title">Booking Schedule List</h2>
                 </div>
                 <div>
                     <table class="table table-bordered">
                         <thead>
+
+
                             <tr>
-                                <th>Serial</th>
+
                                 <th>Service Title</th>
-                                <th>User Name</th>
-                                <th>Email</th>
-                                <th>Mobile Number</th>
                                 <th>Current Address</th>
                                 <th>Destination</th>
-                                <th>Status</th>
-                                <th>Booking Date</th>
                                 <th>Service Date</th>
-                                <th>Action</th>
+                                <th>Paymemt Mathod</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <% allBooking.map(service=>{ %>
+                                <tr>
+
+                                    <td>
+                                        <%=service.ser_title%>
+                                    </td>                                 
+                                    <td>
+                                        <%=service.current_address%>
+                                    </td>
+                                    <td>
+                                        <%=service.des_house%>, Road No: <%=service.des_road%>, Division:
+                                                <%=service.des_division%>,
+                                                    District:
+                                                    Chattogram, Thana/Upazila: <%=service.des_upazila%>
+                                    </td>
+                                    <td>
+                                        <%=service.fdate%>
+                                    </td>
+                                    <td>
+                                        <%=service.payment_mathod%>
+                                    </td>
+                                    <%if(service.status==0){%>
+                                        <td class="pending">Pending</td>                                        
+                                        <% }else if(service.status==1){ %>
+                                            <td class="confirmed">Active</td>                                            
+                                            <% }else{ %>
+                                                <td class="pending">Hold</td>                                                
+                                            <% } %>
+
+                                </tr>
 
 
-                            <tr>
-                                <th scope="row">02</td>
-                                <td>Residential Moves (2 Bed)</td>
-                                <th scope="row">Zamal Khan</th>
-                                <td>khanacka123@gmail.com</td>
-                                <td>01835847561</td>
-                                <th scope="row">Khulshi Colony, Road No: 3, Division: Chattogram, District: Chattogram,
-                                    Thana/Upazila: Khulshi</td>
-                                <th scope="row">Jihan Villa, Star Ship R/A, Road No: 2, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Bayezid</td>
-                                <td class="pending">pending</td>
-                                <td>10/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><a class="btn btn-primary">Accept</a> <a class="btn btn-danger">Reject </a></td>
-
-                            </tr>
-
-
-
-                            <tr>
-                                <th scope="row">04</td>
-                                <td>Residential Moves (Single Bed)</td>
-                                <th scope="row">Mozammel Hoque</th>
-                                <td>mozammel124hq@gmail.com</td>
-                                <td>01621351982</td>
-                                <th scope="row">Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <th scope="row"> Anawar Mention, Sugandha R/A, Road No: 5, Division: Chattogram,
-                                    District:
-                                    Chattogram, Thana/Upazila: Panchlaish</td>
-                                <td class="pending">pending</td>
-                                <td>12/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><a class="btn btn-primary">Accept</a> <a class="btn btn-danger">Reject </a></td>
-
-                            </tr>
-
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="title">
-                    <h2 class="section--title">My Schedule List</h2>
-                </div>
-                <div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Serial</th>
-                                <th>Service Title</th>
-                                <th>User Name</th>
-                                <th>Email</th>
-                                <th>Mobile Number</th>
-                                <th>Current Address</th>
-                                <th>Destination</th>
-                                <th>Status</th>
-                                <th>Booking Date</th>
-                                <th>Service Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                <th scope="row">05</td>
-                                <td>Residential Moves (2 Bed)</td>
-                                <th scope="row">Nayan Mozumder</th>
-                                <td>jainul869@gmail.com</td>
-                                <td>01875351982</td>
-                                <th scope="row">Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <th scope="row">Poly Vila, South Khulshi, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <td class="pending">pending</td>
-                                <td>12/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                            </tr>
+                                <% }) %>
 
                         </tbody>
                     </table>

@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/adminlogout">
                         <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
                         <span class="sidebar--item">Logout</span>
                     </a>
@@ -75,77 +75,75 @@
                                 <th>Email</th>
                                 <th>Mobile</th>
                                 <th>Address</th>
+                                <th>Worker Picture</th>
+                                <th>Worker NID 1st Page</th>
+                                <th>Worker NID 2nd Page</th>
                                 <th>Status</th>
-                                <th>Settings</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Md Muktar Uddin</td>
-                                <td>30/07/2022</td>
-                                <td>Male</td>
-                                <td>muktar74ctg@gmail.com</td>
-                                <td>01519758426</td>
-                                <td>Hafija Villa, Road No: 8, Division: Chattogram, District: Chattogram, Thana/Upazila: Khulshi </td>
-                                <td class="pending">pending</td>
-                                <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-                            </tr> 
-                            <tr>
-                                <td>Md Mahtab Chowdhury</td>
-                                <td>22/09/2022</td>
-                                <td>Male</td>
-                                <td>mahtab9827@gmail.com</td>
-                                <td>01864289173</td>
-                                <td>Simran Villa, Road No: 2, Division: Chattogram, District: Chattogram, Thana/Upazila: Khulshi </td>
-                                <td class="pending">pending</td>
-                                <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-                            </tr> 
-                            <tr>
-                                <td>Abdul Aziz</td>
-                                <td>12/11/2022</td>
-                                <td>Male</td>
-                                <td>kmpmaamr@gmail.com</td>
-                                <td>01858742691</td>
-                                <td>Poly Villa,Paharika R/A, Road No: 1, Division: Chattogram, District: Chattogram, Thana/Upazila: Khulshi </td>
-                                <td class="pending">pending</td>
-                                <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-                            </tr> 
-                            <tr>
-                                <td>Rafi Islam</td>
-                                <td>22/12/2022</td>
-                                <td>Male</td>
-                                <td>uddinrafi158@gmail.com</td>
-                                <td>01835847561</td>
-                                <td>Khulshi Colony, Road No: 3, Division: Chattogram, District: Chattogram, Thana/Upazila: Khulshi </td>
-                                <td class="pending">pending</td>
-                                <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-                            </tr> 
-                            <tr>
-                                <td>Rakib Uddin</td>
-                                <td>25/12/2022</td>
-                                <td>Male</td>
-                                <td>rakib2489ud@gmail.com</td>
-                                <td>01875351982</td>
-                                <td>Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District: Chattogram, Thana/Upazila: Khulshi </td>
-                                <td class="pending">pending</td>
-                                <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-                            </tr> 
-                            <tr>
-                                <td>Ziaul Hoque</td>
-                                <td>27/12/2022</td>
-                                <td>Male</td>
-                                <td>ziaul24hq@gmail.com</td>
-                                <td>01875351982</td>
-                                <td>Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District: Chattogram, Thana/Upazila: Khulshi </td>
-                                <td class="pending">pending</td>
-                                <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
-                            </tr> 
-                                                      
+                            <% allWorker.map(worker=>{ %>
+                                <tr>
+                                    <td>
+                                        <%=worker.first_name%>
+                                            <%=worker.last_name%>
+                                    </td>
+                                    <td>
+                                        <%=worker.fdate%>
+                                    </td>
+                                    <td>
+                                        <%=worker.gender%>
+                                    </td>
+                                    <td>
+                                        <%=worker.email%>
+                                    </td>
+                                    <td>
+                                        <%=worker.phone%>
+                                    </td>
+                                    <td>
+                                        <%=worker.house%>, Road No: <%=worker.road%>, Division: <%=worker.division%>,
+                                                    District:
+                                                    Chattogram, Thana/Upazila: <%=worker.upazila%>
+                                    </td>
+                                    <td>
+                                        <img src="uploads/<%=worker.propic%>" alt="Profile">
+                                    </td>
+                                    <td>
+                                        <img src="uploads/<%=worker.nid1%>" alt="NID">
+                                    </td>
+                                    <td>
+                                        <img src="uploads/<%=worker.nid2%>" alt="NID">
+                                    </td>
+                                    <%if(worker.status==0){%>
+                                        <td class="pending">Pending</td>
+                                        <td><a class="btn btn-primary"
+                                                href="http://localhost:3000/verify-worker-account/<%=worker.w_id%>">Accept</a>
+                                        </td>
+                                        <% }else if(worker.status==1){ %>
+                                            <td class="confirmed">Active</td>
+                                            <td><a class="btn btn-primary"
+                                                    href="http://localhost:3000/hold-worker-account/<%=worker.w_id%>">Blocked</a>
+                                            </td>
+                                            <% }else{ %>
+                                                <td class="pending">Hold</td>
+                                                <td><a class="btn btn-primary"
+                                                        href="http://localhost:3000/verify-worker-account/<%=worker.w_id%>">Active</a>
+                                                </td>
+                                                <% } %>
+                                </tr>
+                                
+                                <% }) %>
+
                         </tbody>
                     </table>
                 </div>
+
             </div>
+
         </div>
     </section>
+
+
 
     <script src=""></script>

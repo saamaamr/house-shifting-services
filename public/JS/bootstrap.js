@@ -1555,16 +1555,7 @@
     NAVBAR_NAV: '.navbar-nav',
     VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
   };
-  var AttachmentMap = {
-    TOP: 'top-start',
-    TOPEND: 'top-end',
-    BOTTOM: 'bottom-start',
-    BOTTOMEND: 'bottom-end',
-    RIGHT: 'right-start',
-    RIGHTEND: 'right-end',
-    LEFT: 'left-start',
-    LEFTEND: 'left-end'
-  };
+
   var Default$2 = {
     offset: 0,
     flip: true,
@@ -1771,26 +1762,7 @@
         return this._menu;
       };
 
-      _proto._getPlacement = function _getPlacement() {
-        var $parentDropdown = $(this._element.parentNode);
-        var placement = AttachmentMap.BOTTOM; // Handle dropup
 
-        if ($parentDropdown.hasClass(ClassName$4.DROPUP)) {
-          placement = AttachmentMap.TOP;
-
-          if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-            placement = AttachmentMap.TOPEND;
-          }
-        } else if ($parentDropdown.hasClass(ClassName$4.DROPRIGHT)) {
-          placement = AttachmentMap.RIGHT;
-        } else if ($parentDropdown.hasClass(ClassName$4.DROPLEFT)) {
-          placement = AttachmentMap.LEFT;
-        } else if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-          placement = AttachmentMap.BOTTOMEND;
-        }
-
-        return placement;
-      };
 
       _proto._detectNavbar = function _detectNavbar() {
         return $(this._element).closest('.navbar').length > 0;
@@ -2763,13 +2735,7 @@
     sanitizeFn: '(null|function)',
     whiteList: 'object'
   };
-  var AttachmentMap$1 = {
-    AUTO: 'auto',
-    TOP: 'top',
-    RIGHT: 'right',
-    BOTTOM: 'bottom',
-    LEFT: 'left'
-  };
+
   var Default$4 = {
     animation: true,
     template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
@@ -3166,9 +3132,7 @@
         return $(document).find(this.config.container);
       };
 
-      _proto._getAttachment = function _getAttachment(placement) {
-        return AttachmentMap$1[placement.toUpperCase()];
-      };
+
 
       _proto._setListeners = function _setListeners() {
         var _this4 = this;
@@ -3716,44 +3680,7 @@
       var _proto = ScrollSpy.prototype;
 
       // Public
-      _proto.refresh = function refresh() {
-        var _this2 = this;
 
-        var autoMethod = this._scrollElement === this._scrollElement.window ? OffsetMethod.OFFSET : OffsetMethod.POSITION;
-        var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-        var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
-        this._offsets = [];
-        this._targets = [];
-        this._scrollHeight = this._getScrollHeight();
-        var targets = [].slice.call(document.querySelectorAll(this._selector));
-        targets.map(function (element) {
-          var target;
-          var targetSelector = Util.getSelectorFromElement(element);
-
-          if (targetSelector) {
-            target = document.querySelector(targetSelector);
-          }
-
-          if (target) {
-            var targetBCR = target.getBoundingClientRect();
-
-            if (targetBCR.width || targetBCR.height) {
-              // TODO (fat): remove sketch reliance on jQuery position/offset
-              return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
-            }
-          }
-
-          return null;
-        }).filter(function (item) {
-          return item;
-        }).sort(function (a, b) {
-          return a[0] - b[0];
-        }).forEach(function (item) {
-          _this2._offsets.push(item[0]);
-
-          _this2._targets.push(item[1]);
-        });
-      };
 
       _proto.dispose = function dispose() {
         $.removeData(this._element, DATA_KEY$8);

@@ -81,9 +81,12 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/offer">Offer</a>
                     </li>
+                    <% if(!uId) { %>
                     <li class="nav-item">
                       <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
+                    <% } %>
+
                     <% console.log("test to...",uId) %>
 
                       <% if(uId) { %>
@@ -101,7 +104,7 @@
                             <a class="nav-link" aria-current="page" href="/login" value="user" id="user">User Login</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/login" value="worker" id="worker">Worker
+                            <a class="nav-link" aria-current="page" href="/workerlogin" value="worker" id="worker">Worker
                               Login</a>
                           </li>
                           <% } %>

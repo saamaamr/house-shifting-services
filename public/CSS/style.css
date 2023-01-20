@@ -5,7 +5,12 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
-
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
 .layout_padding {
   padding: 90px 0;
 }
@@ -477,7 +482,13 @@ a:focus {
 .about_section .img-box img {
   width: 100%;
 }
-
+.about_section .img-profile-box {
+  text-align: right;
+}
+.about_section .img-profile-box img {
+  width: 270px;
+  height: 270px;
+}
 .about_section .detail-box p {
   color: #7a7a7a;
   margin-top: 15px;
@@ -645,7 +656,25 @@ a:focus {
   border: 1px solid #87CEEB;
 }
 
+
+
 .service_section .btn-box a:hover {
+  background-color: transparent;
+  color: #87CEEB;
+}
+
+.service_section .btn-box button {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: 1px solid #87CEEB;
+}
+
+.service_section .btn-box button:hover {
   background-color: transparent;
   color: #87CEEB;
 }
@@ -850,18 +879,6 @@ a:focus {
   margin-bottom: 0;
 }
 
-.contact_section .map_form_container .map_container {
-  display: none;
-}
-
-.contact_section .map_form_container.map_show form {
-  display: none;
-}
-
-.contact_section .map_form_container.map_show .map_container {
-  display: block;
-}
-
 .contact_section .form-group {
   margin-bottom: 25px;
 }
@@ -982,21 +999,8 @@ a:focus {
   color: #87CEEB;
 }
 
-.contact_section .btn-box .map_btn {
-  display: inline-block;
-  padding: 10px 0;
-  background-color: #1453ab;
-  color: #ffffff;
-  border-radius: 0;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  border: 1px solid #1453ab;
-}
 
-.contact_section .btn-box .map_btn:hover {
-  background-color: transparent;
-  color: #1453ab;
-}
+
 
 .contact_section .add_btn {
   display: inline-block;
@@ -1019,9 +1023,6 @@ a:focus {
   color: #1453ab;
 }
 
-.contact_section .map_container .map {
-  height: 285px;
-}
 
 
  a .booked_btn {  
@@ -1038,9 +1039,7 @@ a:focus {
   text-transform: uppercase;
 }
 
-.contact_section .map_container .map #googleMap {
-  height: 100%;
-}
+
 
 /* footer section*/
 .footer_section {
@@ -1230,7 +1229,7 @@ a:focus {
 .footer-info p a {
   color: inherit;
 }
-/*# sourceMappingURL=style.css.map */
+
 
 /* footer {
   position: fixed;

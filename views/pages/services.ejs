@@ -37,11 +37,15 @@
                           Price <%= service.price%> BDT
                         </h5>
                   </div>
-                  <div class="btn-box">
-                    <a href="#">
-                      Book Now
-                    </a>
-                  </div>
+                  <form action="/book-service" method="post">
+                    <div class="btn-box">
+                      <input type="hidden" name="service_id" value="<%= service.ser_id %>">
+                      <button type="submit">
+                        Book Now
+                      </button>
+                      
+                      </div>
+                    </form>
                   <% } else{ %>
                   </div>
                     <div class="btn-box">

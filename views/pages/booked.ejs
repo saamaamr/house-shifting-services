@@ -18,29 +18,44 @@
                                     <thead>
                                         <tr>
                                             <th>Title</th>
-                                            <th>Details</th>
-                                            <th>Booked Date</th>
+                                            <th>Price</th>
+                                            <th>Paymemt Mathod</th>
+                                            <th>Service Date</th>
                                             <th>Status</th>
-                                            
+
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% userBooking.map(boking=>{ %>
                                             <tr>
-                                                <th scope="row">
-                                                    <%= allService[0].stitle%>
-                                                </th>
                                                 <td>
-                                                    <%= allService[0].items%> also <%= allService[0].details%>
+                                                    <%=boking.ser_title%>
                                                 </td>
                                                 <td>
-                                                    <%= allService[0].fdate%>
+                                                    <%=boking.ser_price%>
                                                 </td>
                                                 <td>
-                                                    <%= allService[0].status%>
+                                                    <%=boking.payment_mathod%>
                                                 </td>
-                                                                                          
+                                                <td>
+                                                    <%=boking.fdate%>
+                                                </td>
+                                                <%if(boking.status==0){%>
+                                                    <td class="pending">Pending</td>
+
+                                                    <% }else if(boking.status==1){ %>
+                                                        <td class="confirmed">Active</td>
+
+                                                        <% }else{ %>
+                                                            <td class="pending">Hold</td>
+
+
+                                                            <% } %>
                                             </tr>
-                                            
+                                            <% }) %>
+
+
+
                                     </tbody>
                                 </table>
                             </div>

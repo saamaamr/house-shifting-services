@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/adminlogout">
                         <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
                         <span class="sidebar--item">Logout</span>
                     </a>
@@ -68,122 +68,84 @@
                 <div>
                     <table class="table table-bordered">
                         <thead>
+
+
                             <tr>
-                                <th>Serial</th>
+
                                 <th>Service Title</th>
                                 <th>User Name</th>
                                 <th>Email</th>
                                 <th>Mobile Number</th>
                                 <th>Current Address</th>
                                 <th>Destination</th>
-                                <th>Status</th>
-                                <th>Booking Date</th>
                                 <th>Service Date</th>
+                                <th>Paymemt Mathod</th>
+                                <th>Transaction Proof</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">01</td>
-                                <td>Residential Moves (3 Bed)</td>
-                                <th scope="row">Md. Jainul</th>
-                                <td>jainul869@gmail.com</td>
-                                <td>01875351982</td>
-                                <th scope="row">Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <th scope="row">Homayon Villa, Mousumi R/A, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Halishahar</td>
-                                <td class="pending">pending</td>
-                                <td>08/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
+                            <% allBooking.map(service=>{ %>
+                                <tr>
 
-                            <tr>
-                                <th scope="row">02</td>
-                                <td>Residential Moves (2 Bed)</td>
-                                <th scope="row">Zamal Khan</th>
-                                <td>khanacka123@gmail.com</td>
-                                <td>01835847561</td>
-                                <th scope="row">Khulshi Colony, Road No: 3, Division: Chattogram, District: Chattogram,
-                                    Thana/Upazila: Khulshi</td>
-                                <th scope="row">Jihan Villa, Star Ship R/A, Road No: 2, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Bayezid</td>
-                                <td class="pending">pending</td>
-                                <td>10/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
+                                    <td>
+                                        <%=service.ser_title%>
+                                    </td>
+                                    <th scope="row">
+                                        <%for(let i=0;i<allUser.length;i++){ %>
+                                            <%if(allUser[i].email==service.user_email){ %>
+                                                <%=allUser[i].first_name%>
+                                                    <%=allUser[i].last_name%>
+                                                        <% } %>
+                                                            <% } %>
+                                    </th>
+                                    <td>
+                                        <%=service.user_email%>
+                                    </td>
+                                    <td>
+                                        <%=service.user_phone%>
+                                    </td>
+                                    <td>
+                                        <%=service.current_address%>
+                                    </td>
+                                    <td>
+                                        <%=service.des_house%>, Road No: <%=service.des_road%>, Division:
+                                                <%=service.des_division%>,
+                                                    District:
+                                                    Chattogram, Thana/Upazila: <%=service.des_upazila%>
+                                    </td>
+                                    <td>
+                                        <%=service.fdate%>
+                                    </td>
+                                    <td>
+                                        <%=service.payment_mathod%>
+                                    </td>
+                                    <td>
+                                        <img src="uploads/<%=service.payment_proof%>" alt="Profile">
+                                    </td>
+                                    <%if(service.status==0){%>
+                                        <td class="pending">Pending</td>
+                                        <td><a class="btn btn-primary"
+                                                href="http://localhost:3000/verify-booking/<%=service.sb_id%>">Accept</a>
+                                        </td>
+                                        <% }else if(service.status==1){ %>
+                                            <td class="confirmed">Active</td>
+                                            <td><a class="btn btn-primary"
+                                                    href="http://localhost:3000/hold-booking/<%=service.sb_id%>">Blocked</a>
+                                            </td>
+                                            <% }else{ %>
+                                                <td class="pending">Hold</td>
+                                                <td><a class="btn btn-primary"
+                                                    href="http://localhost:3000/verify-booking/<%=service.sb_id%>">Accept</a>
+                                                </td>
+                                                
+                                            <% } %>
 
-                            <tr>
-                                <th scope="row">03</td>
-                                <td>Residential Moves (3 Bed)</td>
-                                <th scope="row">Jihadul Islam</th>
-                                <td>islamjihab768@gmail.com</td>
-                                <td>01491537183</td>
-                                <th scope="row">Roupabad, Road No: 1, Division: Chattogram, District: Chattogram, Thana/Upazila:
-                                    Bayezid</td>
-                                <th scope="row">Poly Vila, South Khulshi, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <td class="pending">pending</td>
-                                <td>12/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
+                                </tr>
 
-                            <tr>
-                                <th scope="row">04</td>
-                                <td>Residential Moves (Single Bed)</td>
-                                <th scope="row">Mozammel Hoque</th>
-                                <td>mozammel124hq@gmail.com</td>
-                                <td>01621351982</td>
-                                <th scope="row">Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <th scope="row"> Anawar Mention, Sugandha R/A, Road No: 5, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Panchlaish</td>
-                                <td class="pending">pending</td>
-                                <td>12/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
 
-                            <tr>
-                                <th scope="row">05</td>
-                                <td>Residential Moves (2 Bed)</td>
-                                <th scope="row">Nayan Mozumder</th>
-                                <td>jainul869@gmail.com</td>
-                                <td>01875351982</td>
-                                <th scope="row">Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <th scope="row">Poly Vila, South Khulshi, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <td class="pending">pending</td>
-                                <td>12/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">06</td>
-                                <td>Residential Moves (2 Bed)</td>
-                                <th scope="row">Kalam Uddin</th>
-                                <td>kalam24ud@gmail.com</td>
-                                <td>01875356175</td>
-                                <th scope="row">Master Villa,Khulshi Colony, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Khulshi</td>
-                                <th scope="row">Homayon Villa, Mousumi R/A, Road No: 1, Division: Chattogram, District:
-                                    Chattogram, Thana/Upazila: Halishahar</td>
-                                <td class="pending">pending</td>
-                                <td>12/01/2023</td>
-                                <th scope="row">01/02/2023</td>
-                                <td><span><i class="ri-edit-line edit"></i><i
-                                            class="ri-delete-bin-line delete"></i></span></td>
-                            </tr>
+                                <% }) %>
 
                         </tbody>
                     </table>

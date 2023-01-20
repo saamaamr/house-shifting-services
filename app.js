@@ -2,7 +2,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const env = require('dotenv');
 const router = require('./routers/routes');
-
+const multer = require('multer');
+const upload = multer({ dest: 'public/uploads/' });
 //
 const {
   checkUser,

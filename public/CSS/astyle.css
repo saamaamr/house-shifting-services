@@ -121,7 +121,20 @@ img {
     height: 100%;
     object-fit: cover;
 }
+td img {
+    position:relative;
+    width: 150px;
+    height: 150px;
+    object-fit:fill;
+  
+}
 
+
+td img:hover {
+    width: 350px;
+    height: 350px;
+
+  }
 .main {
     position: relative;
     width: 100%;
