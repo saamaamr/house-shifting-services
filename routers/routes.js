@@ -6,7 +6,6 @@ const multer = require('multer');
 
 const upload = multer({ dest: 'public/uploads/' });
 
-
 /* ======== import files ========= */
 const {
   requireAuth,
@@ -15,14 +14,6 @@ const {
 } = require('../middleware/AuthMiddleware');
 const { singupValidator, loginValidator } = require('../middleware/validator/userValidator');
 const decorateHtmlResponse = require('../middleware/decorateHtmlResponse');
-
-
-
-
-
-
-
-
 
 /* ======= Get Routes ======= */
 router.get('/', UserController.getHome)
@@ -84,7 +75,7 @@ router.post('/alogin', UserController.adminLoginData)
 router.post('/book-service', UserController.bookData)
 router.post('/add-service', UserController.serviceData)
 router.post('/login', decorateHtmlResponse('Login'), UserController.loginC)
-router.post('/workerlogin',  UserController.workerloginC)
+router.post('/workerlogin', UserController.workerloginC)
 router.post(
   '/signup', upload.fields([{ name: 'propic' }]),
   decorateHtmlResponse('SignUp'),
@@ -93,8 +84,8 @@ router.post(
 );
 router.post(
   '/workersignup', upload.fields([{ name: 'propic' },
-   { name: 'nid1' }, 
-   { name: 'nid2' }]),
+  { name: 'nid1' },
+  { name: 'nid2' }]),
   UserController.insertWorkerRegisterC,
 );
 

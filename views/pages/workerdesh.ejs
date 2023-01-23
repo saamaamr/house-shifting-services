@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/eos-icons/dist/css/eos-icons.css" rel="stylesheet" >
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/astyle.css" />
-  <title>Worker</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/eos-icons/dist/css/eos-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/astyle.css" />
+    <title>Worker</title>
 </head>
+
 <body>
-    
-<section class="header">
+
+    <section class="header">
         <div class="logo">
             <i class="ri-menu-line icon icon-0 menu"></i>
             <h2>House<span>Shifting</span></h2>
@@ -25,9 +26,10 @@
                 <button><i class="ri-search-2-line"></i></button>
             </div>
             <div class="notification--profile">
-          
+
                 <div class="picon chat">
-                    <%=workerData[0].first_name%> <%=workerData[0].last_name%>
+                    <%=workerData[0].first_name%>
+                        <%=workerData[0].last_name%>
                 </div>
                 <div class="picon profile">
                     <img src="/uploads/<%=workerData[0].propic%>" alt="">
@@ -35,7 +37,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="main">
         <div class="sidebar">
             <ul class="sidebar--items">
@@ -54,7 +56,7 @@
                 </li>
             </ul>
             <ul class="sidebar--bottom-items">
-            
+
                 <li>
                     <a href="/workerlogout">
                         <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
@@ -89,7 +91,7 @@
 
                                     <td>
                                         <%=service.ser_title%>
-                                    </td>                                 
+                                    </td>
                                     <td>
                                         <%=service.current_address%>
                                     </td>
@@ -106,12 +108,12 @@
                                         <%=service.payment_mathod%>
                                     </td>
                                     <%if(service.status==0){%>
-                                        <td class="pending">Pending</td>                                        
+                                        <td class="pending">Pending</td>
                                         <% }else if(service.status==1){ %>
-                                            <td class="confirmed">Active</td>                                            
+                                            <td class="confirmed">Active</td>
                                             <% }else{ %>
-                                                <td class="pending">Hold</td>                                                
-                                            <% } %>
+                                                <td class="pending">Hold</td>
+                                                <% } %>
 
                                 </tr>
 

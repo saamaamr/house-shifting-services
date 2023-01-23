@@ -74,7 +74,7 @@
                                     <th>Gender</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
-                                    <th>Address</th>                                    
+                                    <th>Address</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -85,7 +85,7 @@
                                             <%=worker.first_name%>
                                                 <%=worker.last_name%>
                                         </td>
-                              
+
                                         <td>
                                             <%=worker.gender%>
                                         </td>
@@ -96,25 +96,26 @@
                                             <%=worker.phone%>
                                         </td>
                                         <td>
-                                            <%=worker.house%>, Road No: <%=worker.road%>, Division: <%=worker.division%>,
+                                            <%=worker.house%>, Road No: <%=worker.road%>, Division: <%=worker.division%>
+                                                        ,
                                                         District:
                                                         Chattogram, Thana/Upazila: <%=worker.upazila%>
                                         </td>
-                                        
+
                                         <%if(worker.status==0){%>
                                             <td class="pending">Pending</td>
-                                           
+
                                             <% }else if(worker.status==1){ %>
                                                 <td class="confirmed">Active</td>
-                                                
+
                                                 <% }else{ %>
                                                     <td class="pending">Hold</td>
-                                                   
+
                                                     <% } %>
                                     </tr>
-                                    
+
                                     <% }) %>
-    
+
                             </tbody>
                         </table>
                     </div>

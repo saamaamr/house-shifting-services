@@ -2,58 +2,96 @@
 
   <%- include ('../template/nav') -%>
 
-  
 
-  <!-- about section -->
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <section class="about_section layout_padding">
-    <div class="container  ">
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                We Are <span>Shifting House</span>
-              </h2>
+    <!-- about section -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="about_section layout_padding">
+      <div class="container  ">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="images/about-img.jpg" alt="">
             </div>
-            <p>
-              Welcome to our house shifting service. We understand that moving can be a stressful and
-              overwhelming experience, but we're here to make it as smooth and hassle-free as possible. Our team of
-              experienced and skilled movers is dedicated to providing you with the best possible service at a
-              competitive price.
-            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  We Are <span>Shifting House</span>
+                </h2>
+              </div>
+              <p>
+                Welcome to our house shifting service. We understand that moving can be a stressful and
+                overwhelming experience, but we're here to make it as smooth and hassle-free as possible. Our team of
+                experienced and skilled movers is dedicated to providing you with the best possible service at a
+                competitive price.
+              </p>
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- end about section -->
+    <!-- end about section -->
 
-  <!-- service section -->
+    <!-- service section -->
 
-  <section class="service_section layout_padding-bottom">
-    <div class="service_container">
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2>
-            Our <span>Services</span>
-          </h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-          </p>
-        </div>
-        <div class="row">
+    <section class="service_section layout_padding-bottom">
+      <div class="service_container">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              Our <span>Services</span>
+            </h2>
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-lg-4 mx-auto ">
+              <div class="box">
+                <div class="img-box">
+                  <img src="images/s1.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    <%= allService[0].stitle%>
+                  </h5>
+                  <p>
+
+                    <%= allService[0].items + " also " + allService[0].details %>
+                  </p>
+                  <% if(uId) { %>
+                    <h5>
+                      Price <%= allService[0].price%> BDT
+                    </h5>
+                </div>
+                <form action="/book-service" method="post">
+                  <div class="btn-box">
+                    <input type="hidden" name="service_id" value="<%= allService[0].ser_id %>">
+                    <button type="submit">
+                      Book Now
+                    </button>
+                  </div>
+                </form>
+                <% } else{ %>
+              </div>
+              <div class="btn-box">
+                <a href="/login">
+                  Book Service
+                </a>
+              </div>
+
+              <% } %>
+
+            </div>
+          </div>
           <div class="col-sm-6 col-lg-4 mx-auto ">
             <div class="box">
               <div class="img-box">
@@ -61,25 +99,25 @@
               </div>
               <div class="detail-box">
                 <h5>
-                  <%= allService[0].stitle%>
+                  <%= allService[1].stitle%>
                 </h5>
-                    <p>
+                <p>
 
-                      <%= allService[0].items + " also " + allService[0].details %>
-                    </p>
-                    <% if(uId) { %>
-                      <h5>
-                        Price <%= allService[0].price%> BDT
-                      </h5>
+                  <%= allService[1].items + " also " + allService[1].details %>
+                </p>
+                <% if(uId) { %>
+                  <h5>
+                    Price <%= allService[1].price%> BDT
+                  </h5>
               </div>
               <form action="/book-service" method="post">
-              <div class="btn-box">
-                <input type="hidden" name="service_id" value="<%= allService[0].ser_id %>">
-                <button type="submit">
-                  Book Now
-                </button>                
+                <div class="btn-box">
+                  <input type="hidden" name="service_id" value="<%= allService[1].ser_id %>">
+                  <button type="submit">
+                    Book Now
+                  </button>
                 </div>
-              </form>              
+              </form>
               <% } else{ %>
             </div>
             <div class="btn-box">
@@ -91,83 +129,45 @@
             <% } %>
 
           </div>
-      </div>
-      <div class="col-sm-6 col-lg-4 mx-auto ">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s1.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              <%= allService[1].stitle%>
-            </h5>
-                <p>
-
-                  <%= allService[1].items + " also " + allService[1].details %>
-                </p>
-                <% if(uId) { %>
-                  <h5>
-                    Price <%= allService[1].price%> BDT
-                  </h5>
-          </div>
-          <form action="/book-service" method="post">
-          <div class="btn-box">
-            <input type="hidden" name="service_id" value="<%= allService[1].ser_id %>">
-            <button type="submit">
-              Book Now
-            </button>                
+        </div>
+        <div class="col-sm-6 col-lg-4 mx-auto ">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/s1.png" alt="">
             </div>
-          </form>              
-          <% } else{ %>
-        </div>
-        <div class="btn-box">
-          <a href="/login">
-            Book Service
-          </a>
-        </div>
-
-        <% } %>
-
-      </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mx-auto ">
-    <div class="box">
-      <div class="img-box">
-        <img src="images/s1.png" alt="">
-      </div>
-      <div class="detail-box">
-        <h5>
-          <%= allService[2].stitle%>
-        </h5>
-            <p>
-
-              <%= allService[2].items + " also " + allService[2].details %>
-            </p>
-            <% if(uId) { %>
+            <div class="detail-box">
               <h5>
-                Price <%= allService[2].price%> BDT
+                <%= allService[2].stitle%>
               </h5>
-      </div>
-      <form action="/book-service" method="post">
-      <div class="btn-box">
-        <input type="hidden" name="service_id" value="<%= allService[2].ser_id %>">
-        <button type="submit">
-          Book Now
-        </button>                
+              <p>
+
+                <%= allService[2].items + " also " + allService[2].details %>
+              </p>
+              <% if(uId) { %>
+                <h5>
+                  Price <%= allService[2].price%> BDT
+                </h5>
+            </div>
+            <form action="/book-service" method="post">
+              <div class="btn-box">
+                <input type="hidden" name="service_id" value="<%= allService[2].ser_id %>">
+                <button type="submit">
+                  Book Now
+                </button>
+              </div>
+            </form>
+            <% } else{ %>
+          </div>
+          <div class="btn-box">
+            <a href="/login">
+              Book Service
+            </a>
+          </div>
+
+          <% } %>
+
         </div>
-      </form>              
-      <% } else{ %>
-    </div>
-    <div class="btn-box">
-      <a href="/login">
-        Book Service
-      </a>
-    </div>
-
-    <% } %>
-
-  </div>
-</div>
+      </div>
 
       </div>
       <div class="btn-box">
@@ -175,173 +175,172 @@
           View More
         </a>
       </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- end service section -->
-
-
-  <!-- call section -->
-
-  <section class="call_section ">
-    <div class="container  ">
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/call-img.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h5>
-              Call Us Today
-            </h5>
-            <h3>
-              +880 1601XXXXXX
-            </h3>
-            <p>
-              We help you for your house shifting. We understand that moving can be a stressful and
-              overwhelming experience, but we're here to make it as smooth and hassle-free as possible. Our team of
-              experienced and skilled movers is dedicated to providing you with the best possible service at a
-              competitive price.
-            </p>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- end call section -->
-
-  <!-- faq section -->
-
-  <!-- remove -->
-
-  <!-- end faq section -->
-
-  <!-- Offer section -->
-
-  <section class="news_section ">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Latest <span>Offer</span>
-        </h2>
       </div>
-      <div class="row">
-        <div class="col-lg-6 ">
-          <div class="box">
+    </section>
+
+    <!-- end service section -->
+
+
+    <!-- call section -->
+
+    <section class="call_section ">
+      <div class="container  ">
+        <div class="row">
+          <div class="col-md-6 ">
             <div class="img-box">
-              <img src="images/b1.jpg" alt="">
+              <img src="images/call-img.jpg" alt="">
             </div>
+          </div>
+          <div class="col-md-6">
             <div class="detail-box">
               <h5>
-                Winter Special
+                Call Us Today
               </h5>
+              <h3>
+                +880 1601XXXXXX
+              </h3>
               <p>
-                Book your move with us before the end of January and receive 10% off your total bill.Free packing and
-                unpacking service with every move! Move with ease and without any additional cost. Offer valid for that
-                time only.
+                We help you for your house shifting. We understand that moving can be a stressful and
+                overwhelming experience, but we're here to make it as smooth and hassle-free as possible. Our team of
+                experienced and skilled movers is dedicated to providing you with the best possible service at a
+                competitive price.
               </p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 ">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/b2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Offer for PCIU students moving for study
-              </h5>
-              <p>
-                15% off for all students with valid ID. Move with ease and save on your student budget. Show valid
-                student ID at the time of checkout to avail the offer. Use code PCIU10 at the time of checkout.
-              </p>
-
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- end Offer section -->
-  <% if(!uId) { %>
+    <!-- end call section -->
 
-  <!-- contact section -->
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-11 col-lg-9 mx-auto">
-          <div class="map_form_container">
-            <div class="form_container">
-              <div class="heading_container heading_center">
-                <h2 class="contact_heading">
-                  Contact <span>Us</span>
-                </h2>
+    <!-- faq section -->
+
+    <!-- remove -->
+
+    <!-- end faq section -->
+
+    <!-- Offer section -->
+
+    <section class="news_section ">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Latest <span>Offer</span>
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 ">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/b1.jpg" alt="">
               </div>
-              <form action="">
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input type="text" class="form-control" placeholder="First Name" />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <input type="text" class="form-control" placeholder="Last Name" />
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input type="email" class="form-control" placeholder="Email" />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <input type="text" class="form-control" placeholder="Phone Number" />
-                  </div>
-                </div>
-                <div class="form-group ">
-                  <input type="text" class="message-box" placeholder="Message" />
-                </div>
-                <div class="btn-box">
-                  <button type="submit" class="submit_btn">
-                    Send
-                  </button>
-                </div>
-              </form>
+              <div class="detail-box">
+                <h5>
+                  Winter Special
+                </h5>
+                <p>
+                  Book your move with us before the end of January and receive 10% off your total bill.Free packing and
+                  unpacking service with every move! Move with ease and without any additional cost. Offer valid for
+                  that
+                  time only.
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 ">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/b2.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Offer for PCIU students moving for study
+                </h5>
+                <p>
+                  15% off for all students with valid ID. Move with ease and save on your student budget. Show valid
+                  student ID at the time of checkout to avail the offer. Use code PCIU10 at the time of checkout.
+                </p>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end contact section -->
-  <% } else{ %>
-<br>
-  <% } %>
+    </section>
+
+    <!-- end Offer section -->
+    <% if(!uId) { %>
+
+      <!-- contact section -->
+      <section class="contact_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-11 col-lg-9 mx-auto">
+              <div class="map_form_container">
+                <div class="form_container">
+                  <div class="heading_container heading_center">
+                    <h2 class="contact_heading">
+                      Contact <span>Us</span>
+                    </h2>
+                  </div>
+                  <form action="">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="First Name" />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Last Name" />
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <input type="email" class="form-control" placeholder="Email" />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Phone Number" />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <input type="text" class="message-box" placeholder="Message" />
+                    </div>
+                    <div class="btn-box">
+                      <button type="submit" class="submit_btn">
+                        Send
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end contact section -->
+      <% } else{ %>
+        <br>
+        <% } %>
 
 
-  <% if(uId) { %>
-    <script src="/js/custom.js"></script>
-    <% } else{ %>
-      <script src="/js/home.js"></script>
-      <% } %>
+          <% if(uId) { %>
+            <script></script>
+            <% } else{ %>
+              <script src="/js/home.js"></script>
+              <% } %>
 
 
 
-        <%- include ('../template/footer') %>
+                <%- include ('../template/footer') %>
 
 
-          <!-- jQery -->
-          <script src="js/jquery-3.4.1.min.js"></script>
-          <!-- popper js -->
-          <script src="js/popper.min.js"></script>
-          <!-- bootstrap js -->
-          <script src="js/bootstrap.js"></script>
-          <!-- custom js -->
-          <script src="js/custom.js"></script>
+                  <!-- jQery -->
+                  <script src="js/jquery-3.4.1.min.js"></script>
+                  <!-- popper js -->
+                  <script src="js/popper.min.js"></script>
+                  <!-- bootstrap js -->
+                  <script src="js/bootstrap.js"></script>
 
-          </body>
+                  </body>
 
-          </html>
+                  </html>

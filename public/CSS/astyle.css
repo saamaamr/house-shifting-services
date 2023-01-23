@@ -1,11 +1,12 @@
 footer {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -121,12 +122,13 @@ img {
     height: 100%;
     object-fit: cover;
 }
+
 td img {
-    position:relative;
+    position: relative;
     width: 150px;
     height: 150px;
-    object-fit:fill;
-  
+    object-fit: fill;
+
 }
 
 
@@ -134,7 +136,8 @@ td img:hover {
     width: 350px;
     height: 350px;
 
-  }
+}
+
 .main {
     position: relative;
     width: 100%;
@@ -525,6 +528,7 @@ th {
 /* responsive starts here */
 
 @media screen and (max-width:1350px) {
+
     .cards,
     .workers--cards {
         overflow-x: scroll;
@@ -542,51 +546,64 @@ th {
         padding-left: 30px;
         width: fit-content;
     }
+
     .search--notification--profile {
         padding: 0 20px;
         margin-left: auto;
     }
+
     .main--content {
         padding: 0 20px;
     }
+
     .sidebar {
         padding: 20px;
     }
+
     .sidebar.active {
         width: 85px;
     }
+
     .main--content.active {
         width: calc(100% - 85px);
     }
 }
 
 @media screen and (max-width:590px) {
+
     .search,
     .lock,
     .chat {
         display: none;
     }
+
     .notification--profile {
         margin-left: auto;
     }
+
     .search--notification--profile {
         width: fit-content;
     }
+
     .sidebar {
         transform: translateX(-100%);
         z-index: 10;
         background-color: #fff;
     }
+
     .sidebar.active {
         transform: translateX(0);
         width: 300px;
     }
+
     .sidebar.active .sidebar--item {
         display: block;
     }
+
     .main--content {
         width: calc(100% - 0px);
     }
+
     .main--content.active {
         width: calc(100% - 0px);
     }
@@ -596,15 +613,19 @@ th {
     .worker--filter {
         display: none;
     }
+
     .main--content {
         padding: 0 10px;
     }
+
     .logo {
         padding-left: 10px;
     }
+
     .search--notification--profile {
         padding: 0 10px;
     }
+
     .sidebar {
         padding: 10px;
     }
@@ -612,7 +633,8 @@ th {
 
 #more {
     display: none;
-  }
-  #more2 {
+}
+
+#more2 {
     display: none;
-  }
+}

@@ -1,9 +1,6 @@
 const dbConnect = require('../config/database');
 
 const UserModels = {
-
-
-
   /* <====== Insert Data in DataBase =====> */
   /* ====== user Register Model ===== */
   insertRegisterM: async (firstName, lastName, gender, email, phone, propic, house, road, division, zila, upazila, pass) => {
@@ -151,7 +148,6 @@ const UserModels = {
     const [rows] = await dbConnect.promise().execute(sql);
     return rows;
   },
-
 
 };
 

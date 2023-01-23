@@ -190,29 +190,29 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>                   
+                        <tbody>
                             <% allService.map(service=>{ %>
-                                    <tr>
-                                            <th scope="row">
-                                                <%= service.stitle%>
-                                            </th>
-                                            <td>
-                                                <%= service.items%> also <%= service.details%>
-                                            </td>
-                                            <td>
-                                                <%= service.fdate%>
-                                            </td>
-                                            <td>
-                                                <%= service.status%>
-                                            </td>
-                                            <td>
-                                                <%= service.price%> BDT
-                                            </td>
-                                            <td><span><i class="ri-edit-line edit"></i><i
-                                                        class="ri-delete-bin-line delete"></i></span></td>
+                                <tr>
+                                    <th scope="row">
+                                        <%= service.stitle%>
+                                    </th>
+                                    <td>
+                                        <%= service.items%> also <%= service.details%>
+                                    </td>
+                                    <td>
+                                        <%= service.fdate%>
+                                    </td>
+                                    <td>
+                                        <%= service.status%>
+                                    </td>
+                                    <td>
+                                        <%= service.price%> BDT
+                                    </td>
+                                    <td><span><i class="ri-edit-line edit"></i><i
+                                                class="ri-delete-bin-line delete"></i></span></td>
 
-                                                    </tr>
-                                                    <% }) %>
+                                </tr>
+                                <% }) %>
 
 
                         </tbody>

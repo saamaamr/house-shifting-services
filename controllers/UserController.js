@@ -19,7 +19,6 @@ const transporter = nodemailer.createTransport({
     pass: 'rfltsxwlieliwbru',
   },
 });
-//
 
 async function sendMail(toMail, subject, textMessage, htmlMessage) {
   // send mail with defined transport object
@@ -267,7 +266,6 @@ const UserController = {
       }
     } catch (e) {
       res.send('Wrong')
-      // res.send(<script>alert("your alert message"); window.location.href = "/page_location"; </script>);
     }
   },
 

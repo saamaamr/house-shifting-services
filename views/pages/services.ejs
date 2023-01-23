@@ -25,17 +25,17 @@
                     <h5>
                       <%= service.stitle%>
                     </h5>
-  
+
                     <% let fullString=service.items + " also " + service.details %>
                       <% let subString=fullString.substr(0, 150); %>
                         <p>
-  
+
                           <%= fullString %>
                         </p>
                         <% if(uId) { %>
-                        <h5>
-                          Price <%= service.price%> BDT
-                        </h5>
+                          <h5>
+                            Price <%= service.price%> BDT
+                          </h5>
                   </div>
                   <form action="/book-service" method="post">
                     <div class="btn-box">
@@ -43,152 +43,149 @@
                       <button type="submit">
                         Book Now
                       </button>
-                      
-                      </div>
-                    </form>
-                  <% } else{ %>
-                  </div>
-                    <div class="btn-box">
-                      <a href="#">
-                        Book Service
-                      </a>
+
                     </div>
-  
-                    <% } %>
-  
+                  </form>
+                  <% } else{ %>
                 </div>
+                <div class="btn-box">
+                  <a href="#">
+                    Book Service
+                  </a>
+                </div>
+
+                <% } %>
+
               </div>
-              <% }) %>
-          </div>          
+          </div>
+          <% }) %>
         </div>
+      </div>
       </div>
     </section>
     <!-- end service section -->
     <% if(uId) { %>
-    <!-- contact section -->
-    <section class="contact_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-11 col-lg-9 mx-auto">
-            <div class="map_form_container">
-              <div class="form_container">
-                <div class="heading_container heading_center">
-                  <h2 class="contact_heading">
-                    Coutomize <span>Service</span>
-                  </h2>
-                </div>
-                <form action="">
-                  <div class="form-row">
-                    <div class="form-group col-md-12">
-                      <input type="text" class="form-control" placeholder="Enter Service Title" name="title">
-                    </div>
+      <!-- custon section -->
+      <section class="contact_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-11 col-lg-9 mx-auto">
+              <div class="map_form_container">
+                <div class="form_container">
+                  <div class="heading_container heading_center">
+                    <h2 class="contact_heading">
+                      Coutomize <span>Service</span>
+                    </h2>
                   </div>
-                  <div class="info-box" hidden>
+                  <form action="">
                     <div class="form-row">
-                      <div class="form-group col-md-3">
-                        <h5>Item</h5>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <h5>Quantity</h5>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <h5>Image</h5>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <h5>Action</h5>
+                      <div class="form-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Enter Service Title" name="title">
                       </div>
                     </div>
+                    <div class="info-box" hidden>
+                      <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <h5>Item</h5>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <h5>Quantity</h5>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <h5>Image</h5>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <h5>Action</h5>
+                        </div>
+                      </div>
 
+                      <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <h5></h5>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <h5></h5>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <p></p>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <h5>
+                            <span><i class="ri-edit-line edit"></i></span>
+                            <span><i class="ri-delete-bin-line delete"></i></span>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
                     <div class="form-row">
-                      <div class="form-group col-md-3">
-                        <h5></h5>
+                      <div class="form-group col-md-5">
+                        <select class="form-select" name="items" aria-label="Default select example">
+                          <option selected>Select Moving Item:</option>
+                          <option value="Packets">Packets</option>
+                          <option value="Khat">Bedstead(Khat)</option>
+                          <option value="Almirah">Almirah</option>
+                          <option value="Chair">Chair</option>
+                          <option value="Table">Table</option>
+                          <option value="Dressing-Table">Dressing Table</option>
+                          <option value="Wardrobe">Wardrobe</option>
+                          <option value="Cabinate">Cabinate</option>
+                          <option value="Fan">Fan</option>
+                          <option value="Frize">Frize</option>
+                          <option value="AC">AC</option>
+                          <option value="Washing-Machine">Washing Machine</option>
+                          <option value="other">Others</option>
+                        </select>
                       </div>
-                      <div class="form-group col-md-3">
-                        <h5></h5>
+                      <div class="form-group col-md-5">
+                        <input type="number" class="form-control" placeholder="Enter Quantity" />
                       </div>
-                      <div class="form-group col-md-3">
-                        <p></p>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <h5>
-                          <span><i class="ri-edit-line edit"></i></span> 
-                          <span><i class="ri-delete-bin-line delete"></i></span>
-                        </h5>
+
+                      <div class="form-group col-md-2">
+                        <button class="add_btn">
+                          Add
+                        </button>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-5">
-                      <select class="form-select" name="items" aria-label="Default select example">
-                        <option selected>Select Moving Item:</option>
-                        <option value="Packets">Packets</option>
-                        <option value="Khat">Bedstead(Khat)</option>
-                        <option value="Almirah">Almirah</option>
-                        <option value="Chair">Chair</option>
-                        <option value="Table">Table</option>
-                        <option value="Dressing-Table">Dressing Table</option>
-                        <option value="Wardrobe">Wardrobe</option>
-                        <option value="Cabinate">Cabinate</option>
-                        <option value="Fan">Fan</option>
-                        <option value="Frize">Frize</option>
-                        <option value="AC">AC</option>
-                        <option value="Washing-Machine">Washing Machine</option>
-                        <option value="other">Others</option>
-                      </select>
+                    <div class="form-group ">
+                      <input type="text" class="message-box" placeholder="Other Details. . ." />
                     </div>
-                    <div class="form-group col-md-5">
-                      <input type="number" class="form-control" placeholder="Enter Quantity" />
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <input type="email" class="form-control" placeholder="Email" />
+                      </div>
+                      <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Phone Number" />
+                      </div>
+                      <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter Offer Price ৳ 1000.00" name="price">
+                      </div>
                     </div>
-                
-                    <div class="form-group col-md-2">
-                      <button class="add_btn">
-                        Add
+                    <div class="btn-box">
+                      <button type="submit" class="submit_btn">
+                        Send
                       </button>
                     </div>
-                  </div>
-                  <div class="form-group ">
-                    <input type="text" class="message-box" placeholder="Other Details. . ." />
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <input type="email" class="form-control" placeholder="Email" />
-                    </div>
-                    <div class="form-group col-md-4">
-                      <input type="text" class="form-control" placeholder="Phone Number" />
-                    </div>
-                    <div class="form-group col-md-4">
-                      <input type="text" class="form-control" placeholder="Enter Offer Price ৳ 1000.00" name="price">
-                    </div>
-                  </div>
-                  <div class="btn-box">
-                    <button type="submit" class="submit_btn">
-                      Send
-                    </button>
-                  </div>
-                </form>
+                  </form>
+                </div>
+
               </div>
-              
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- end contact section -->
-    <% } %>
-    <%- include ('../template/footer') %>
+      </section>
+      <!-- end custom section -->
+      <% } %>
+        <%- include ('../template/footer') %>
 
 
-      <!-- jQery -->
-      <script src="js/jquery-3.4.1.min.js"></script>
-      <!-- popper js -->
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-      <!-- bootstrap js -->
-      <script src="js/bootstrap.js"></script>
-      <!-- custom js -->
-      <script src="js/custom.js"></script>
+          <!-- jQery -->
+          <script src="js/jquery-3.4.1.min.js"></script>
+          <!-- popper js -->
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+          <!-- bootstrap js -->
+          <script src="js/bootstrap.js"></script>
+          </body>
 
-      </body>
-
-      </html>
+          </html>
